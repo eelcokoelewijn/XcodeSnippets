@@ -63,6 +63,37 @@ if startOptions == "extract"
   end
 elsif startOptions == "add"
   outputLogMessage("Add snippets to #{xcodeDir}")
+  Dir.glob("*.m") do |snippetFilename|
+
+    f = File.open(snippetFilename)
+    codesnippetPlist = Hash.new()
+    lines = f.readlines
+
+    codeSnippetTitle = lines[0].split(":")
+    codeSnippetTitleKey = codeSnippetTitle[0].sub("// ","")
+    codeSnippetTitleValue = codeSnippetTitle[1]
+    codesnippetPlist[codeSnippetTitleKey] = codeSnippetTitleValue
+
+    codeSnippetCompletionScopes = lines[1].split(":")
+    codeSnippetCompletionScopesKey = codeSnippetCompletionScopes[0].sub("// ","")
+    codeSnippetCompletionScopesValue = codeSnippetCompletionScopes[1]
+    codesnippetPlist[codeSnippetCompletionScopesKey] = [codeSnippetCompletionScopesValue]
+
+    codeSnippetLanguage = lines[2].split(":")
+    codeSnippetLanguageKey = codeSnippetLanguage[0].sub("// ","")
+    codeSnippetLanguageValue = codeSnippetLanguage[1]
+    codesnippetPlist[codeSnippetLanguageKey] = codeSnippetLanguageValue
+
+    # IDECodeSnippetIdentifier
+    # IDECodeSnippetVersion
+    codesnippetPlist["IDECodeSnippetVersion"] = 2
+    # IDECodeSnippetUserSnippet
+    codesnippetPlist["IDECodeSnippetUserSnippet"] = true
+    # IDECodeSnippetContents
+
+    puts codesnippetPlist.to_plist
+  end
+
 else
   outputLogMessage("Use xcode-snippets with 'extract' or 'add' argument")
 end
