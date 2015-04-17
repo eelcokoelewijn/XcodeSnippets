@@ -9,6 +9,7 @@ require_relative('../src/Writer.rb')
 # // Initializes a view frame inside a code block
 # // Platform: All
 # // Language: Objective-C
+# // CompletionPrefix: setFrame
 # // Completion Scope: Function or Method
 # // [Codesnippet]
 

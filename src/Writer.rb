@@ -5,6 +5,7 @@ class Writer
     filename = contentHash['codeSnippetTitle'].downcase.strip.gsub(/[^\w\.\-]/,"_")
     f = File.open(folder+"/"+filename.insert(-1,".m"),"w+")
     f.puts("// IDECodeSnippetTitle: #{contentHash['codeSnippetTitle']}")
+    f.puts("// IDECodeSnippetCompletionPrefix: #{contentHash['codeSnippetCompletionPrefix']}")    
     f.puts("// IDECodeSnippetCompletionScopes: #{contentHash['codeSnippetCompletionScopes']}")
     f.puts("// IDECodeSnippetLanguage: #{contentHash['codeSnippetLanguage']}")
     f.puts("#{contentHash['codeSnippetContents']}")

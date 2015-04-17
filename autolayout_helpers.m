@@ -1,4 +1,5 @@
 // IDECodeSnippetTitle: Autolayout helpers
+// IDECodeSnippetCompletionPrefix: al_setupAutolayout
 // IDECodeSnippetCompletionScopes: ClassImplementation
 // IDECodeSnippetLanguage: Xcode.SourceCodeLanguage.Objective-C
 #pragma mark - setup views
@@ -9,6 +10,7 @@
 }
 
 #pragma mark - layout constraints
+
 - (void)setupConstraints
 {
     NSDictionary *views = @{};

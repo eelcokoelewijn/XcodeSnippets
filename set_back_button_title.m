@@ -1,4 +1,5 @@
 // IDECodeSnippetTitle: Set back button title
+// IDECodeSnippetCompletionPrefix: 
 // IDECodeSnippetCompletionScopes: CodeBlock
 // IDECodeSnippetLanguage: Xcode.SourceCodeLanguage.Objective-C
     //set back button in bar

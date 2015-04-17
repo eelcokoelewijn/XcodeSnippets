@@ -1,4 +1,5 @@
 // IDECodeSnippetTitle: get or create entity with server id
+// IDECodeSnippetCompletionPrefix: cdgcentitywithid
 // IDECodeSnippetCompletionScopes: ClassImplementation
 // IDECodeSnippetLanguage: Xcode.SourceCodeLanguage.Objective-C
 + (<#class#> *)getOrCreate<#class#>WithServerId:(NSInteger)serverId inManagedContext:(NSManagedObjectContext *)context

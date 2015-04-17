@@ -1,4 +1,5 @@
 // IDECodeSnippetTitle: create entity without context
+// IDECodeSnippetCompletionPrefix: cdentitnocontext
 // IDECodeSnippetCompletionScopes: ClassImplementation
 // IDECodeSnippetLanguage: Xcode.SourceCodeLanguage.Objective-C
 + (<#class#> *)create<#class#>

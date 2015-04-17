@@ -1,4 +1,5 @@
 // IDECodeSnippetTitle: sharedInstance
+// IDECodeSnippetCompletionPrefix: shrdinstnc
 // IDECodeSnippetCompletionScopes: ClassImplementation
 // IDECodeSnippetLanguage: Xcode.SourceCodeLanguage.Objective-C
 + (<#class name#> *)sharedInstance
