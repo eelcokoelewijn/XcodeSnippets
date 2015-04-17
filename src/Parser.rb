@@ -68,7 +68,7 @@ class Parser
     codesnippetPlist["IDECodeSnippetUserSnippet"] = true
 
     # IDECodeSnippetContents
-    linesOfCode = lines.slice(5,lines.length)
+    linesOfCode = lines.slice(4,lines.length)
     snippetCode = ""
     for lineOfCode in linesOfCode do
       snippetCode += "#{lineOfCode}"
