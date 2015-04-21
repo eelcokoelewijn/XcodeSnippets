@@ -1,5 +1,6 @@
 // IDECodeSnippetTitle: Layout constraints
-// IDECodeSnippetCompletionPrefix: al_contraints
+// IDECodeSnippetCompletionPrefix: objc_al_contraint-visual-format
 // IDECodeSnippetCompletionScopes: CodeBlock
 // IDECodeSnippetLanguage: Xcode.SourceCodeLanguage.Objective-C
 [<#view#> addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"<#visualformat#>" options:0 metrics:<#metrics#> views:<#views#>]];
+	

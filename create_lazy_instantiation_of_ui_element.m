@@ -1,12 +1,13 @@
 // IDECodeSnippetTitle: Create lazy instantiation of ui element
-// IDECodeSnippetCompletionPrefix: al_lazyUIElement
+// IDECodeSnippetCompletionPrefix: objc_lazy-UI-element
 // IDECodeSnippetCompletionScopes: ClassImplementation
 // IDECodeSnippetLanguage: Xcode.SourceCodeLanguage.Objective-C
 - (<#classname#> *)<#uiElementName#>
-{
-    if (!_<#uiElementName#>) {
-        _<#uiElementName#> = <#className#>;
-        _<#uiElementName#>.translatesAutoresizingMaskIntoConstraints = NO;
-    }
-    return _<#uiElementName#>;
-}
+	{
+	    if (!_<#uiElementName#>) {
+            _<#uiElementName#> = [[<#className#> alloc] initWithFrame:CGRectZero];
+	        _<#uiElementName#>.translatesAutoresizingMaskIntoConstraints = NO;
+	    }
+	    return _<#uiElementName#>;
+	}
+	
