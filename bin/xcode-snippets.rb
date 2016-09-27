@@ -8,7 +8,7 @@ require_relative('../src/Writer.rb')
 # // Set Frame
 # // Initializes a view frame inside a code block
 # // Platform: All
-# // Language: Objective-C
+# // Language: Objective-C, Swift
 # // CompletionPrefix: setFrame
 # // Completion Scope: Function or Method
 # // [Codesnippet]
@@ -24,14 +24,15 @@ if startOptions == "extract"
   Dir.chdir(xcodeDir)
 
   Dir.glob("*.codesnippet") do |snippetFilename|
+    Logger.show("Creating snippet: #{snippetFilename}")
     resultHash = Parser.plistFile(snippetFilename)
     Writer.fileContents(resultHash, wkDir)
   end
 
 elsif startOptions == "add"
   Logger.show("Add snippets to #{xcodeDir}")
-  Dir.glob("*.m") do |snippetFilename|
-
+  Dir.glob("*.{m,swift}") do |snippetFilename|
+    Logger.show("Add snippet: #{snippetFilename}")
     resultHash = Parser.dotMFile(snippetFilename)
     Writer.plistFile(resultHash, xcodeDir)
   end
