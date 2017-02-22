@@ -9,6 +9,7 @@ class Writer
     f.puts("// IDECodeSnippetCompletionPrefix: #{contentHash['codeSnippetCompletionPrefix']}")
     f.puts("// IDECodeSnippetCompletionScopes: #{contentHash['codeSnippetCompletionScopes']}")
     f.puts("// IDECodeSnippetLanguage: #{contentHash['codeSnippetLanguage']}")
+    f.puts("// IDECodeSnippetSummary: #{contentHash['codeSnippetSummary']}")
     f.puts("#{contentHash['codeSnippetContents']}")
   end
 

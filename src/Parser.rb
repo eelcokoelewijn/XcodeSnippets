@@ -23,6 +23,8 @@ class Parser
     parseResultHash['codeSnippetUserSnippet'] = result['IDECodeSnippetUserSnippet']
     # key : IDECodeSnippetVersion
     parseResultHash['codeSnippetVersion'] = result['IDECodeSnippetVersion']
+    # key : IDECodeSnippetSummary
+    parseResultHash['codeSnippetSummary'] = result['IDECodeSnippetSummary']
 
     return parseResultHash
   end
@@ -57,6 +59,12 @@ class Parser
     codeSnippetLanguageKey = codeSnippetLanguage[0].sub("// ","").strip
     codeSnippetLanguageValue = codeSnippetLanguage[1].strip
     codesnippetPlist[codeSnippetLanguageKey] = codeSnippetLanguageValue
+
+    # codeSnippetSummary = ""
+    codeSnippetSummary = lines[4].split(":")
+    codeSnippetSummaryKey = codeSnippetSummary[0].sub("// ","").strip
+    codeSnippetSummaryValue = codeSnippetSummary[1].strip
+    codesnippetPlist[codeSnippetSummaryKey] = codeSnippetSummaryValue
 
     # IDECodeSnippetIdentifier
     codesnippetPlist["IDECodeSnippetIdentifier"] = SecureRandom.uuid.upcase
