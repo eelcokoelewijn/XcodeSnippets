@@ -4,9 +4,10 @@
 // IDECodeSnippetLanguage: Xcode.SourceCodeLanguage.Objective-C
 // IDECodeSnippetSummary: 
 - (<#classname#> *)<#propertyName#>
-{
-    if (!_<#propertyName#>) {
-        _<#propertyName#> = [[<#className#> alloc] init];
-    }
-    return _<#propertyName#>;
-}
+	{
+	    if (!_<#propertyName#>) {
+	        _<#propertyName#> = [[<#className#> alloc] init];
+	    }
+	    return _<#propertyName#>;
+	}
+	
