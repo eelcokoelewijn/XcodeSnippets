@@ -1,22 +1,27 @@
-// IDECodeSnippetTitle: Uses & Mixin cake pattern view model
-// IDECodeSnippetCompletionPrefix: swift-view-model-uses-mixin-di
+// IDECodeSnippetTitle: Uses & Mixin cake pattern with view presenter
+// IDECodeSnippetCompletionPrefix: swift-view-presenter-uses-mixin-di
 // IDECodeSnippetCompletionScopes: TopLevel
 // IDECodeSnippetLanguage: Xcode.SourceCodeLanguage.Swift
-// IDECodeSnippetSummary: Uses & Mixin cake pattern DI
-protocol <#protocol-name-output#>: class {
-	    
+// IDECodeSnippetSummary: Uses & Mixin cake pattern DI with View Presenter
+protocol <#protocol-view-name#>View: class {
+
+}
+
+protocol <#protocol-presenter-name#>Presenter {
+    func start()
+    func setView(_ view: <#protocol-view-name#>View)
+}
+
+protocol Uses<#protocol-presenter-name#>Presenter {
+    var <#protocol-instance-presenter-name#>: <#protocol-presenter-name#>Presenter { get }
+}
+
+class Mixin<#protocol-presenter-name#>Presenter: <#protocol-presenter-name#>Presenter {
+	func start() {
+
 	}
-	
-	protocol <#protocol-name#> {
-	    func start()
-	    func setOutput(_ output: <#protocol-name-output#>)
+
+	func setView(_ view: <#protocol-view-name#>View) {
+
 	}
-	
-	protocol Uses<#protocol-name#> {
-	    var <#protocol-instance-name#>: <#protocol-name#> { get }
-	}
-	
-	class Mixin<#protocol-name#>: <#protocol-name#> {
-	    
-	}
-	
+}
