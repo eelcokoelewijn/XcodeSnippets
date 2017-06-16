@@ -4,4 +4,5 @@
 // IDECodeSnippetLanguage: Xcode.SourceCodeLanguage.Objective-C
 // IDECodeSnippetSummary: 
 __weak typeof(self)weakSelf = self;
+		
 	

@@ -4,4 +4,5 @@
 // IDECodeSnippetLanguage: Xcode.SourceCodeLanguage.Objective-C
 // IDECodeSnippetSummary: 
 static <#type#> *const <#variable name#> = <#value#>;
+		
 	
