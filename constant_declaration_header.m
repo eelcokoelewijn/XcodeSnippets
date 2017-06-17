@@ -4,5 +4,6 @@
 // IDECodeSnippetLanguage: Xcode.SourceCodeLanguage.Objective-C
 // IDECodeSnippetSummary: 
 UIKIT_EXTERN <#type#> *const <#constant name#>;
+			
 		
 	

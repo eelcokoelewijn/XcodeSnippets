@@ -4,5 +4,6 @@
 // IDECodeSnippetLanguage: Xcode.SourceCodeLanguage.Objective-C
 // IDECodeSnippetSummary: 
 @property (nonatomic, strong) <#className#> *<#propertyName#>;
+			
 		
 	

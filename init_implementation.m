@@ -4,9 +4,10 @@
 // IDECodeSnippetLanguage: Xcode.SourceCodeLanguage.Objective-C
 // IDECodeSnippetSummary: 
 self = [super init];
-		if (self) {
-		    <#statements#>
-		}
-		return self;
+			if (self) {
+			    <#statements#>
+			}
+			return self;
+			
 		
 	
