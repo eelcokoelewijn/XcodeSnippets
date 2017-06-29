@@ -4,9 +4,10 @@
 // IDECodeSnippetLanguage: Xcode.SourceCodeLanguage.Objective-C
 // IDECodeSnippetSummary: 
 typedef NS_ENUM(<#type#>, <#name#>){
-				    <#nameForValue#>= 0,
-				    <#nameForValue#>= 1
-				};
+					    <#nameForValue#>= 0,
+					    <#nameForValue#>= 1
+					};
+				
 			
 		
 	

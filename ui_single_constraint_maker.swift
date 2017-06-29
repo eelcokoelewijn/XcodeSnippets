@@ -4,11 +4,12 @@
 // IDECodeSnippetLanguage: Xcode.SourceCodeLanguage.Swift
 // IDECodeSnippetSummary: UI single constraint maker
 NSLayoutConstraint(item: <#item#>,
-		                   attribute: <#attribute#>,
-		                   relatedBy: .equal,
-		                   toItem: <#toItem#>,
-		                   attribute: <#toAttribute#>,
-		                   multiplier: 1,
-		                   constant: 0)
+			                   attribute: <#attribute#>,
+			                   relatedBy: .equal,
+			                   toItem: <#toItem#>,
+			                   attribute: <#toAttribute#>,
+			                   multiplier: 1,
+			                   constant: 0)
+			
 		
 	

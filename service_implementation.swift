@@ -4,13 +4,14 @@
 // IDECodeSnippetLanguage: Xcode.SourceCodeLanguage.Swift
 // IDECodeSnippetSummary: Service implementation with interface declaration
 enum <#ServiceName#>Error: Error {
-		    case error
-		}
-		
-		protocol <#ServiceName#>Service {
-		}
-		
-		final class <#ServiceName#>ServiceImplementation: <#ServiceName#>Service {
-		}
+			    case error
+			}
+			
+			protocol <#ServiceName#>Service {
+			}
+			
+			final class <#ServiceName#>ServiceImplementation: <#ServiceName#>Service {
+			}
+			
 		
 	
