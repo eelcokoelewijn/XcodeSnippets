@@ -9,7 +9,7 @@ import UIKit
 		protocol <#name#>FlowController {
 		    func start()
 		}
-        protocol <#name#>FlowControllerDelegate {
+        protocol <#name#>FlowControllerDelegate: class {
 		    
 		}
 		final class <#name#>FlowControllerImplementation: MainFlowController, <#name#>FlowController {
@@ -30,7 +30,8 @@ import UIKit
 		    }
 		    
 		    func start() {
-		        navigationController.viewControllers = [<#name#>ViewController()]
+		        let presenter = Mixin<#name#>Presenter()
+                navigationController.viewControllers = [<#name#>ViewController(presenter: presenter)]
 		    }
 }
 

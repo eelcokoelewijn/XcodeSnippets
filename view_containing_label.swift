@@ -30,7 +30,7 @@ final class <#view-name#>: UIView {
 				    }
 				    
 				    private func applyViewConstraints() {
-				        let views: [String: Any] = ["label"": <#var-name#>]
+				        let views: [String: Any] = ["label": <#var-name#>]
 				    NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "H:|-[label]-|",
 				                                                                   options: [],
 				                                                                   metrics: nil,
