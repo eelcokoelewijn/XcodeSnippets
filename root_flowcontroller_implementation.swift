@@ -18,7 +18,11 @@ import UIKit
 		    }
 		    var childFlowController: [FlowController] = []
 		    
-		    private lazy var navigationController = UINavigationController()
+            private lazy var navigationController: UINavigationController = {
+                let nc = UINavigationController()
+                nc.navigationBar.isTranslucent = false
+                return nc
+            }()
 		    
 		    init(window: UIWindow?) {
 		        window?.rootViewController = mainFlowController
@@ -28,7 +32,6 @@ import UIKit
 		    func start() {
 		        navigationController.viewControllers = [<#name#>ViewController()]
 		    }
-		}
 }
 
 extension <#name#>FlowControllerImplementation: <#name#>FlowControllerDelegate {

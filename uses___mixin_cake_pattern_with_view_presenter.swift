@@ -27,7 +27,7 @@ protocol <#protocol-view-name#>View: class {
 		}
 	}
 	
-	final <#ViewName#>ViewController: UIViewController, <#ViewName#>View, Uses<#protocol-presenter-name#>Presenter {
+	final class <#ViewName#>ViewController: UIViewController, <#ViewName#>View, Uses<#protocol-presenter-name#>Presenter {
 		let <#name#>Presenter: <#protocol-presenter-name#>Presenter
 		private lazy var moduleView: <#name#>ModuleView = <#name#>ModuleView()
 	
@@ -45,5 +45,10 @@ protocol <#protocol-view-name#>View: class {
 	        super.loadView()
 	        view = moduleView
 	    }
+
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            <#name#>Presenter.start()
+        }
 	}
 	
