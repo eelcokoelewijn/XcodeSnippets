@@ -9,7 +9,7 @@ import UIKit
 		protocol <#name#>FlowController {
 		    func start()
 		}
-        protocol <#name#>FlowControllerDelegate: class {
+        protocol <#name#>PresenterDelegate: class {
 		    
 		}
 		final class <#name#>FlowControllerImplementation: MainFlowController, <#name#>FlowController {
@@ -35,5 +35,5 @@ import UIKit
 		    }
 }
 
-extension <#name#>FlowControllerImplementation: <#name#>FlowControllerDelegate {
+extension <#name#>FlowControllerImplementation: <#name#>PresenterDelegate {
 }
