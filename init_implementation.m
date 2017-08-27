@@ -2,13 +2,9 @@
 // IDECodeSnippetCompletionPrefix: objc_init-implementation
 // IDECodeSnippetCompletionScopes: CodeBlock
 // IDECodeSnippetLanguage: Xcode.SourceCodeLanguage.Objective-C
-// IDECodeSnippetSummary: 
+// IDECodeSnippetSummary:
 self = [super init];
-				if (self) {
-				    <#statements#>
-				}
-				return self;
-				
-			
-		
-	
+if (self) {
+    <#statements#>
+}
+return self;

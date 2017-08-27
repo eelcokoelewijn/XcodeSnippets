@@ -4,11 +4,7 @@
 // IDECodeSnippetLanguage: Xcode.SourceCodeLanguage.Swift
 // IDECodeSnippetSummary: Swift lazy UI variable creation
 private lazy var <#var-name#>: <#type#> = {
-				        let <#var-name#> = <#type#>
-				        <#var-name#>.translatesAutoresizingMaskIntoConstraints = false
-				        return <#var-name#>
-				    }()
-				
-			
-		
-	
+    let <#var-name#> = <#type#>
+    <#var-name#>.translatesAutoresizingMaskIntoConstraints = false
+    return <#var-name#>
+}()
