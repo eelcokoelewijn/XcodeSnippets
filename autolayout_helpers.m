@@ -1,5 +1,5 @@
 // IDECodeSnippetTitle: Autolayout helpers
-// IDECodeSnippetCompletionPrefix: 0bjc_al_setup-auto-layout
+// IDECodeSnippetCompletionPrefix: objc_al_setup-auto-layout
 // IDECodeSnippetCompletionScopes: ClassImplementation
 // IDECodeSnippetLanguage: Xcode.SourceCodeLanguage.Objective-C
 // IDECodeSnippetSummary: Setup auto layout helper views
