@@ -3,4 +3,4 @@
 // IDECodeSnippetCompletionScopes: All
 // IDECodeSnippetLanguage: Xcode.SourceCodeLanguage.Objective-C
 // IDECodeSnippetSummary:
-@property (nonatomic, <#type#>) <#className#> * _Nullable <#propertyName#>;
+@property (nonatomic, <#type#>) <#className#> * _Nonnull <#propertyName#>;

@@ -3,7 +3,7 @@
 // IDECodeSnippetCompletionScopes: ClassImplementation
 // IDECodeSnippetLanguage: Xcode.SourceCodeLanguage.Objective-C
 // IDECodeSnippetSummary:
-- (<#classname#> *)<#uiElementName#> {
+- (<#classname#> * _Nonnull)<#uiElementName#> {
     if (!_<#uiElementName#>) {
         _<#uiElementName#> = [[<#className#> alloc] initWithFrame:CGRectZero];
         _<#uiElementName#>.translatesAutoresizingMaskIntoConstraints = NO;
