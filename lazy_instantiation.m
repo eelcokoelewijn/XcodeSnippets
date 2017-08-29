@@ -3,7 +3,7 @@
 // IDECodeSnippetCompletionScopes: ClassImplementation
 // IDECodeSnippetLanguage: Xcode.SourceCodeLanguage.Objective-C
 // IDECodeSnippetSummary:
-- (<#classname#> *)<#propertyName#> {
+- (<#classname#> * _Nonnull)<#propertyName#> {
     if (!_<#propertyName#>) {
         _<#propertyName#> = [[<#className#> alloc] init];
     }
