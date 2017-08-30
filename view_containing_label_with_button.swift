@@ -35,6 +35,10 @@ final class <#view-class-name#>: UIView {
             <#button-var-name#>.setTitle(title, for: .normal)
     }
 
+    func <#button#>Add(target: Any?, action: Selector, for: UIControlEvents) {
+        <#button#>.addTarget(target, action: action, for: .touchUpInside)
+    }
+
     private func setupViews() {
         backgroundColor = .white
         addSubview(<#label-var-name#>)
