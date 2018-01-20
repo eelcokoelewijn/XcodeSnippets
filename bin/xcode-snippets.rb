@@ -1,4 +1,4 @@
-#!/usr/bin/ruby
+#!/usr/bin/env ruby
 require 'plist' # https://github.com/bleything/plist
 require 'rexml/document'
 require_relative('../src/Logger.rb')
