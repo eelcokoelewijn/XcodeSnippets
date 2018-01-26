@@ -16,12 +16,17 @@ require_relative('../src/Writer.rb')
 startOptions = ARGV[0]
 
 wkDir = Dir.getwd
-xcodeDir = Dir.home+"/Library/Developer/Xcode/UserData/CodeSnippets"
+xCodeDir = Dir.home + "/Library/Developer/Xcode/UserData/CodeSnippets"
+
+if not Dir.exist?(xCodeDir)
+    Logger.show("Creating code snippets folder")
+    Dir.mkdir(xCodeDir)
+end
 
 if startOptions == "extract"
-  Logger.show("Extracting snippets from #{xcodeDir}")
+  Logger.show("Extracting snippets from #{xCodeDir}")
 
-  Dir.chdir(xcodeDir)
+  Dir.chdir(xCodeDir)
 
   Dir.glob("*.codesnippet") do |snippetFilename|
     Logger.show("Creating snippet: #{snippetFilename}")
@@ -30,11 +35,11 @@ if startOptions == "extract"
   end
 
 elsif startOptions == "add"
-  Logger.show("Add snippets to #{xcodeDir}")
+  Logger.show("Add snippets to #{xCodeDir}")
   Dir.glob("*.{m,swift}") do |snippetFilename|
     Logger.show("Add snippet: #{snippetFilename}")
     resultHash = Parser.dotMFile(snippetFilename)
-    Writer.plistFile(resultHash, xcodeDir)
+    Writer.plistFile(resultHash, xCodeDir)
   end
 
 else
