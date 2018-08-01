@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 require 'plist' # https://github.com/bleything/plist
 require 'rexml/document'
+require 'fileutils'
 require_relative('../src/Logger.rb')
 require_relative('../src/Parser.rb')
 require_relative('../src/Writer.rb')
@@ -16,32 +17,67 @@ require_relative('../src/Writer.rb')
 startOptions = ARGV[0]
 
 wkDir = Dir.getwd
-xCodeDir = Dir.home + "/Library/Developer/Xcode/UserData/CodeSnippets"
+snippetsDir = wkDir + "/Snippets"
+templatesDir = wkDir + "/Templates"
+xCodeDir = Dir.home + "/Library/Developer/Xcode/"
+xCodeSnippetsPath = ["UserData","CodeSnippets"]
+xCodeTemplatesPath = ["Templates","File Templates","Custom"]
+xCodeSnippetsDir = xCodeDir + xCodeSnippetsPath.join("/")
+xCodeTemplatesDir = xCodeDir + xCodeTemplatesPath.join("/")
 
-if not Dir.exist?(xCodeDir)
-    Logger.show("Creating code snippets folder")
-    Dir.mkdir(xCodeDir)
+def checkForFolder(path, folder)
+    if not Dir.exist?(path + folder)
+        Logger.show("Creating #{path}#{folder}")
+        Dir.mkdir(path + folder)
+    end
 end
 
-if startOptions == "extract"
-  Logger.show("Extracting snippets from #{xCodeDir}")
+def createTemplatesFolder(baseFolder, paths)
+    fullPath = baseFolder
+    paths.each { |item|
+        checkForFolder(fullPath, item)
+        fullPath += "#{item}/"
+    }
+end
 
-  Dir.chdir(xCodeDir)
+if startOptions == "extract-snippets"
+    checkForFolder(xCodeDir, xCodeSnippetsDir)
+    Logger.show("Extracting snippets from #{xCodeSnippetsDir}")
 
-  Dir.glob("*.codesnippet") do |snippetFilename|
+    Dir.chdir(xCodeSnippetsDir)
+
+    Dir.glob("*.codesnippet") do |snippetFilename|
     Logger.show("Creating snippet: #{snippetFilename}")
     resultHash = Parser.plistFile(snippetFilename)
-    Writer.fileContents(resultHash, wkDir)
-  end
+    Writer.fileContents(resultHash, snippetsDir)
+    end
 
-elsif startOptions == "add"
-  Logger.show("Add snippets to #{xCodeDir}")
-  Dir.glob("*.{m,swift}") do |snippetFilename|
+elsif startOptions == "add-snippets"
+    checkForFolder(xCodeDir, xCodeSnippetsDir)
+    Logger.show("Add snippets to #{xCodeSnippetsDir}")
+    Dir.chdir(snippetsDir)
+    Dir.glob("*.{m,swift}") do |snippetFilename|
     Logger.show("Add snippet: #{snippetFilename}")
     resultHash = Parser.dotMFile(snippetFilename)
-    Writer.plistFile(resultHash, xCodeDir)
-  end
+    Writer.plistFile(resultHash, xCodeSnippetsDir)
+    end
+elsif startOptions == "add-templates"
+    createTemplatesFolder(xCodeDir, xCodeTemplatesPath)
+    Logger.show("Add templates to #{xCodeTemplatesDir}")
+    Dir.chdir(templatesDir)
+    Dir.glob("*.{xctemplate}") do |templateFilename|
+    Logger.show("Add template: #{templateFilename}")
+    FileUtils.cp_r(templateFilename, xCodeTemplatesDir)
+    end
+elsif startOptions == "extract-templates"
+    Logger.show("Extracting templates from #{xCodeTemplatesDir}")
 
+    Dir.chdir(xCodeTemplatesDir)
+
+    Dir.glob("*.xctemplate") do |templateFilename|
+    Logger.show("Copy template: #{templateFilename}")
+    FileUtils.cp_r(templateFilename, templatesDir)
+    end
 else
-  Logger.show("Use xcode-snippets with 'extract' or 'add' argument")
+    Logger.show("Use xcode-snippets with 'extract-snippets' or 'add-snippets' argument")
 end

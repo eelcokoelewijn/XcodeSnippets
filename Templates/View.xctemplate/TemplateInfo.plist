@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Kind</key>
+  <string>Xcode.IDEKit.TextSubstitutionFileTemplateKind</string>
+  <key>Platforms</key>
+  <array>
+    <string>com.apple.platform.iphoneos</string>
+  </array>
+  <key>Description</key>
+  <string>UIView</string>
+  <key>Summary</key>
+  <string>Create empty UIView</string>
+  <key>SortOrder</key>
+  <string>30</string>
+  <key>AllowedTypes</key>
+  <array>
+    <string>public.swift-source</string>
+  </array>
+  <key>DefaultCompletionName</key>
+  <string>View</string>
+  <key>MainTemplateFile</key>
+  <string>___FILEBASENAME___.swift</string>
+</dict>
+</plist>
