@@ -53,7 +53,7 @@ if startOptions == "extract-snippets"
     end
 
 elsif startOptions == "add-snippets"
-    checkForFolder(xCodeDir, xCodeSnippetsDir)
+    checkForFolder(xCodeDir, xCodeSnippetsPath.join("/"))
     Logger.show("Add snippets to #{xCodeSnippetsDir}")
     Dir.chdir(snippetsDir)
     Dir.glob("*.{m,swift}") do |snippetFilename|
