@@ -15,6 +15,7 @@ require_relative('../src/Writer.rb')
 # // [Codesnippet]
 
 startOptions = ARGV[0]
+deleteSnippets = !ARGV[1].nil? ? true : false
 
 wkDir = Dir.getwd
 snippetsDir = wkDir + "/Snippets"
@@ -40,6 +41,10 @@ def createTemplatesFolder(baseFolder, paths)
     }
 end
 
+def deleteFolder(path)
+  FileUtils.rm_rf(path)
+end
+
 if startOptions == "extract-snippets"
     checkForFolder(xCodeDir, xCodeSnippetsPath.join("/"))
     Logger.show("Extracting snippets from #{xCodeSnippetsDir}")
@@ -53,6 +58,10 @@ if startOptions == "extract-snippets"
     end
 
 elsif startOptions == "add-snippets"
+    if deleteSnippets
+      Logger.show("Delete snippets folder #{xCodeSnippetsDir}")
+      deleteFolder(xCodeSnippetsDir)
+    end
     checkForFolder(xCodeDir, xCodeSnippetsPath.join("/"))
     Logger.show("Add snippets to #{xCodeSnippetsDir}")
     Dir.chdir(snippetsDir)
