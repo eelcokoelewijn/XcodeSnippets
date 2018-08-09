@@ -41,7 +41,7 @@ def createTemplatesFolder(baseFolder, paths)
 end
 
 if startOptions == "extract-snippets"
-    checkForFolder(xCodeDir, xCodeSnippetsDir)
+    checkForFolder(xCodeDir, xCodeSnippetsPath.join("/"))
     Logger.show("Extracting snippets from #{xCodeSnippetsDir}")
 
     Dir.chdir(xCodeSnippetsDir)
