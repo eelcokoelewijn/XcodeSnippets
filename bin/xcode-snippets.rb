@@ -88,5 +88,9 @@ elsif startOptions == "extract-templates"
     FileUtils.cp_r(templateFilename, templatesDir)
     end
 else
-    Logger.show("Use xcode-snippets with 'extract-snippets' or 'add-snippets' argument")
+    Logger.show("Use xcode-snippets with:
+         - 'extract-snippets'
+         - 'add-snippets', could take optional 'delete' argument
+         - 'add-templates'
+         - 'extract-templates'")
 end

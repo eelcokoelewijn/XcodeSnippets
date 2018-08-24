@@ -9,9 +9,9 @@
     <string>com.apple.platform.iphoneos</string>
   </array>
   <key>Description</key>
-  <string>UIView</string>
+  <string>Struct</string>
   <key>Summary</key>
-  <string>Create empty UIView</string>
+  <string>Create empty struct</string>
   <key>SortOrder</key>
   <string>30</string>
   <key>AllowedTypes</key>
@@ -19,7 +19,7 @@
     <string>public.swift-source</string>
   </array>
   <key>DefaultCompletionName</key>
-  <string>FileNameView</string>
+  <string>FileName</string>
   <key>MainTemplateFile</key>
   <string>___FILEBASENAME___.swift</string>
 </dict>
