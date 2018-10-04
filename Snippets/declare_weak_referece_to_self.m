@@ -2,5 +2,5 @@
 // IDECodeSnippetCompletionPrefix: objc_weak-reference-self
 // IDECodeSnippetCompletionScopes: CodeBlock
 // IDECodeSnippetLanguage: Xcode.SourceCodeLanguage.Objective-C
-// IDECodeSnippetSummary:
+// IDECodeSnippetSummary: 
 __weak typeof(self)weakSelf = self;

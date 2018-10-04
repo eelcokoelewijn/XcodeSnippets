@@ -2,11 +2,11 @@
 // IDECodeSnippetCompletionPrefix: objc_lazy-UI-element
 // IDECodeSnippetCompletionScopes: ClassImplementation
 // IDECodeSnippetLanguage: Xcode.SourceCodeLanguage.Objective-C
-// IDECodeSnippetSummary:
+// IDECodeSnippetSummary: 
 - (<#classname#> * _Nonnull)<#uiElementName#> {
-    if (!_<#uiElementName#>) {
-        _<#uiElementName#> = [[<#className#> alloc] initWithFrame:CGRectZero];
-        _<#uiElementName#>.translatesAutoresizingMaskIntoConstraints = NO;
-    }
-    return _<#uiElementName#>;
-}
+	    if (!_<#uiElementName#>) {
+	        _<#uiElementName#> = [[<#className#> alloc] initWithFrame:CGRectZero];
+	        _<#uiElementName#>.translatesAutoresizingMaskIntoConstraints = NO;
+	    }
+	    return _<#uiElementName#>;
+	}

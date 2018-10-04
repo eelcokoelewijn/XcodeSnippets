@@ -4,7 +4,7 @@
 // IDECodeSnippetLanguage: Xcode.SourceCodeLanguage.Swift
 // IDECodeSnippetSummary: Create module router
 import Foundation
-
-final class <#module_info.name#>RouterImplementation: NavigationControllerRouter, <#module_info.name#>Router {
-    
-}
+	
+	final class <#module_info.name#>RouterImplementation: NavigationControllerRouter, <#module_info.name#>Router {
+	    
+	}

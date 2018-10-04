@@ -10,7 +10,9 @@ class Writer
     f.puts("// IDECodeSnippetCompletionScopes: #{contentHash['codeSnippetCompletionScopes']}")
     f.puts("// IDECodeSnippetLanguage: #{contentHash['codeSnippetLanguage']}")
     f.puts("// IDECodeSnippetSummary: #{contentHash['codeSnippetSummary']}")
-    f.puts("#{contentHash['codeSnippetContents']}")
+    snippet = contentHash['codeSnippetContents']
+    snippet = snippet.strip
+    f.puts("#{snippet}")
   end
 
   def self.fileExtension(snippetLanguage)

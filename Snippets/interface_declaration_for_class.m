@@ -4,6 +4,5 @@
 // IDECodeSnippetLanguage: Xcode.SourceCodeLanguage.Objective-C
 // IDECodeSnippetSummary: Create interface declaration for class implementation file
 @interface <#className#>()
-	<#property#>
-	@end
-	
+		<#property#>
+		@end
