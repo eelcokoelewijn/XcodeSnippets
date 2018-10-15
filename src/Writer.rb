@@ -11,7 +11,7 @@ class Writer
     f.puts("// IDECodeSnippetLanguage: #{contentHash['codeSnippetLanguage']}")
     f.puts("// IDECodeSnippetSummary: #{contentHash['codeSnippetSummary']}")
     snippet = contentHash['codeSnippetContents']
-    snippet = snippet.strip
+    snippet = snippet.gsub(/^#{snippet.scan(/^[ \t]+(?=\S)/).min}/, '').strip
     f.puts("#{snippet}")
   end
 

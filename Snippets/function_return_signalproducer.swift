@@ -4,5 +4,5 @@
 // IDECodeSnippetLanguage: Xcode.SourceCodeLanguage.Swift
 // IDECodeSnippetSummary: Function returning a SignalProducer
 func <#functionName#>(<#argument#>) -> SignalProducer<<#ResultType#>, <#ErrorType#> {
-	    return SignalProducer.empty
-	}
+    return SignalProducer.empty
+}
