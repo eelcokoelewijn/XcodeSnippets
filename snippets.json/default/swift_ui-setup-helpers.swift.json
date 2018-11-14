@@ -1,0 +1,13 @@
+{
+  "scopes" : [
+    "ClassImplementation"
+  ],
+  "summary" : "UI setup methods",
+  "userSnippet" : true,
+  "title" : "UI Setup & constraints helpers",
+  "completionPrefix" : "swift_ui-setup-helpers",
+  "language" : "Xcode.SourceCodeLanguage.Swift",
+  "contents" : "private func setupViews() {\n\t    <#paretnView#>.addSubview(<#childView#>)\n\t}\n\t\n\tprivate func applyViewConstraints() {\n\t    let views = [\"<#label-name#>\": <#view#>]\n\t    NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: \"<#layout#>\", options: [], metrics: nil, views: views))\n\t    NSLayoutConstraint.activate([<#childView#>.<#anchor#>.constraint(equalTo: <#parentView#>.<#anchor#>)])\n\t}\n\t",
+  "identifier" : "29C2E6CF-5144-4C25-954A-9B2DC2E8F5E6",
+  "version" : 2
+}

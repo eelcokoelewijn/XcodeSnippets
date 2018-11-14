@@ -1,0 +1,13 @@
+{
+  "scopes" : [
+    "CodeBlock"
+  ],
+  "summary" : "Create layout constraint using visual format",
+  "userSnippet" : true,
+  "title" : "Create NSLayoutConstraint visual format",
+  "completionPrefix" : "cnstrnt",
+  "language" : "Xcode.SourceCodeLanguage.Objective-C",
+  "contents" : "[<#view#> addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:<#visualformat#> options:0 metrics:<#metrics#> views:<#views#>]];\n\t",
+  "identifier" : "3B6DD540-B447-48DB-9CDE-BD2640EADDF8",
+  "version" : 2
+}

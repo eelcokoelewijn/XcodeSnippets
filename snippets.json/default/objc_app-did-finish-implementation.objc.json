@@ -1,0 +1,13 @@
+{
+  "scopes" : [
+    "CodeBlock"
+  ],
+  "summary" : "",
+  "userSnippet" : true,
+  "title" : "AppDelegate didFinishLaunching",
+  "completionPrefix" : "objc_app-did-finish-implementation",
+  "language" : "Xcode.SourceCodeLanguage.Objective-C",
+  "contents" : "self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];\n    <#classname#> *rootVC = [[<#classname#> alloc] init];\n    UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:rootVC];\n    [[self window] setRootViewController:navVC];\n    [self.window makeKeyAndVisible];\n    ",
+  "identifier" : "E47B8959-63EF-437B-B26C-783E97FCCA43",
+  "version" : 2
+}

@@ -1,0 +1,13 @@
+{
+  "scopes" : [
+    "TopLevel"
+  ],
+  "summary" : "",
+  "userSnippet" : true,
+  "title" : "typedef NS_ENUM",
+  "completionPrefix" : "objc_enum",
+  "language" : "Xcode.SourceCodeLanguage.Objective-C",
+  "contents" : "typedef NS_ENUM(NSInteger, <#name#>){\n\t    <#nameForValue#>= 0,\n\t    <#nameForValue#>= 1\n\t};\n\t",
+  "identifier" : "6E6787A3-3DA3-4A52-82C2-B2BF7A798443",
+  "version" : 2
+}

@@ -1,0 +1,13 @@
+{
+  "scopes" : [
+    "TopLevel"
+  ],
+  "summary" : "Create protocol with default implementation based on Self requirement",
+  "userSnippet" : true,
+  "title" : "Protocol extension with Self requirement",
+  "completionPrefix" : "swift_protocol-extension-self",
+  "language" : "Xcode.SourceCodeLanguage.Swift",
+  "contents" : "protocol <#protocol-name#>: class {\n\t    func <#function-name#>()\n\t}\n\t\n\textension <#protocol-name#> where Self: <#type-name#> {\n\t    func <#function-name#>() {\n\t\n\t    }\n\t}\n\t",
+  "identifier" : "29AC34D2-CB28-4A5F-B5E4-B8829061B90A",
+  "version" : 2
+}

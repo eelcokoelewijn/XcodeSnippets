@@ -1,0 +1,13 @@
+{
+  "scopes" : [
+    "All"
+  ],
+  "summary" : "Create interface declaration for class implementation file",
+  "userSnippet" : true,
+  "title" : "Interface declaration for class",
+  "completionPrefix" : "objc_interface",
+  "language" : "Xcode.SourceCodeLanguage.Objective-C",
+  "contents" : "@interface <#className#>()\n    <#property#>\n    @end\n    ",
+  "identifier" : "F0B9DD08-26AE-4636-9F34-3447125CFB3E",
+  "version" : 2
+}

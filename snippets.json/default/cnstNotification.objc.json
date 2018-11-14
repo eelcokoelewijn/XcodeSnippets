@@ -1,0 +1,13 @@
+{
+  "scopes" : [
+    "ClassImplementation"
+  ],
+  "summary" : "",
+  "userSnippet" : true,
+  "title" : "Notification constant",
+  "completionPrefix" : "cnstNotification",
+  "language" : "Xcode.SourceCodeLanguage.Objective-C",
+  "contents" : "UIKIT_EXTERN <#type#> *const <#constant name#>;\n\t",
+  "identifier" : "530CE0B7-F3B5-48A0-A376-60DD3AB6252A",
+  "version" : 2
+}

@@ -1,0 +1,13 @@
+{
+  "scopes" : [
+    "TopLevel"
+  ],
+  "summary" : "ASDisplayNode template",
+  "userSnippet" : true,
+  "title" : "Texture DisplayNode",
+  "completionPrefix" : "swift_texture_display_node",
+  "language" : "Xcode.SourceCodeLanguage.Swift",
+  "contents" : "final class <#nodeName#>Node: ASDisplayNode {\n\t    lazy var textNode: ASTextNode = {\n\t        let t = ASTextNode()\n\t        return t\n\t    }()\n\t    \n\t    override init() {\n\t        super.init()\n\t        automaticallyManagesSubnodes = true\n\t    }\n\t    \n\t    override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {\n\t        super.layoutSpecThatFits(constrainedSize)\n\t        let insetSpec = ASInsetLayoutSpec(insets: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8), child: textNode)\n\t        return insetSpec\n\t    }\n\t}\n\t",
+  "identifier" : "1B947F31-6CF6-4630-89AF-4BF577B89FC0",
+  "version" : 2
+}

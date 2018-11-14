@@ -1,0 +1,13 @@
+{
+  "scopes" : [
+    "All"
+  ],
+  "summary" : "Create module router",
+  "userSnippet" : true,
+  "title" : "Module router",
+  "completionPrefix" : "swift_module-router",
+  "language" : "Xcode.SourceCodeLanguage.Swift",
+  "contents" : "import Foundation\n\t\n\tfinal class <#module_info.name#>RouterImplementation: NavigationControllerRouter, <#module_info.name#>Router {\n\t    \n\t}\n\t",
+  "identifier" : "AC0DCDEE-5FE5-417D-8A25-1B465FE2E8C0",
+  "version" : 2
+}

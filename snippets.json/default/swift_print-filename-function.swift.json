@@ -1,0 +1,13 @@
+{
+  "scopes" : [
+    "All"
+  ],
+  "summary" : "Print filename and function",
+  "userSnippet" : true,
+  "title" : "Print filename and function",
+  "completionPrefix" : "swift_print-filename-function",
+  "language" : "Xcode.SourceCodeLanguage.Swift",
+  "contents" : "print(\"\\(#file.components(separatedBy: \"\/\").last ?? \"\")->\\(#function)\")\n\t",
+  "identifier" : "806FBFE8-73ED-4F9D-8667-97744FDF5653",
+  "version" : 2
+}

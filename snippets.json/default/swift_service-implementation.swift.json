@@ -1,0 +1,13 @@
+{
+  "scopes" : [
+    "TopLevel"
+  ],
+  "summary" : "Service implementation with interface declaration",
+  "userSnippet" : true,
+  "title" : "Service implementation",
+  "completionPrefix" : "swift_service-implementation",
+  "language" : "Xcode.SourceCodeLanguage.Swift",
+  "contents" : "enum <#ServiceName#>Error: Error {\n\t    case error\n\t}\n\t\n\tprotocol <#ServiceName#>Service {\n\t}\n\t\n\tfinal class <#ServiceName#>ServiceImplementation: <#ServiceName#>Service {\n\t}\n\t",
+  "identifier" : "7B6F7B58-F379-4D2E-9097-6DB10B7C83B7",
+  "version" : 2
+}

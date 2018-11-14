@@ -1,0 +1,13 @@
+{
+  "scopes" : [
+    "All"
+  ],
+  "summary" : "Creates button with background for state",
+  "userSnippet" : true,
+  "title" : "UIButton extension create button with background color",
+  "completionPrefix" : "swift_ui_button-background-extension",
+  "language" : "Xcode.SourceCodeLanguage.Swift",
+  "contents" : "import UIKit\n\t\n\textension UIButton {\n\t    \n\t    func setBackgroundColor(_ color: UIColor, forState: UIControlState) {\n\t        \n\t        UIGraphicsBeginImageContext(CGSize(width: 1, height: 1))\n\t        UIGraphicsGetCurrentContext()?.setFillColor(UIColor.clear.cgColor)\n\t        UIGraphicsGetCurrentContext()?.setFillColor(color.cgColor)\n\t        UIGraphicsGetCurrentContext()?.fill(CGRect(x: 0, y: 0, width: 1, height: 1))\n\t        \n\t        let colorImage = UIGraphicsGetImageFromCurrentImageContext()\n\t        UIGraphicsEndImageContext()\n\t        \n\t        self.setBackgroundImage(colorImage, for: forState)\n\t    }\n\t}\n\t",
+  "identifier" : "2E3D18AE-3E00-44C2-AFA0-F6284B43ED3A",
+  "version" : 2
+}
