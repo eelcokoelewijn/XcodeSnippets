@@ -6,11 +6,11 @@ class Parser
   def self.plistFile(filename)
     result = Plist::parse_xml(filename)
 
-    parseResultHash = Hash.new()
+    parseResultHash = Hash.new
     # key : IDECodeSnippetCompletionScopes
     parseResultHash['codeSnippetCompletionScopes'] = result['IDECodeSnippetCompletionScopes'][0]
     # key : IDECodeSnippetCompletionPrefix
-    parseResultHash['codeSnippetCompletionPrefix'] = result['IDECodeSnippetCompletionPrefix'];
+    parseResultHash['codeSnippetCompletionPrefix'] = result['IDECodeSnippetCompletionPrefix']
     # key : IDECodeSnippetContents
     parseResultHash['codeSnippetContents'] = result['IDECodeSnippetContents']
     # key : IDECodeSnippetIdentifier

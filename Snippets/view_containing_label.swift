@@ -7,7 +7,7 @@ final class <#view-name#>: UIView {
     private lazy var label: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
-        return view
+        return l
     }()
 
     override init(frame: CGRect) {
@@ -21,20 +21,23 @@ final class <#view-name#>: UIView {
     }
 
     func configure(labelWithText text: String) {
-        label.text = text
+            label.text = text
     }
-}
 
-private extension <#view-name#> {
-    func setupViews() {
+    private func setupViews() {
         backgroundColor = .white
         addSubview(label)
     }
 
-    func applyViewConstraints() {
-        NSLayoutConstraint.activate([label.topAnchor.constraint(equalTo: self.topAnchor)])
-        NSLayoutConstraint.activate([label.leadingAnchor.constraint(equalTo: self.leadingAnchor)])
-        NSLayoutConstraint.activate([label.trailingAnchor.constraint(equalTo: self.trailingAnchor)])
-        NSLayoutConstraint.activate([label.bottomAnchor.constraint(equalTo: self.bottomAnchor)])
+    private func applyViewConstraints() {
+        let views: [String: Any] = ["label": label]
+        NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "H:|-[label]-|",
+                                                                   options: [],
+                                                                   metrics: nil,
+                                                                   views: views))
+        NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "V:|-[label]-|",
+                                                                   options: [],
+                                                                   metrics: nil,
+                                                                   views: views))
     }
 }
