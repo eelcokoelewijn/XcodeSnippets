@@ -1,0 +1,13 @@
+{
+  "scopes" : [
+    "ClassImplementation"
+  ],
+  "summary" : "Function returning a SignalProducer",
+  "userSnippet" : true,
+  "title" : "Function return SignalProducer",
+  "completionPrefix" : "swift_function_signalproducer",
+  "language" : "Xcode.SourceCodeLanguage.Swift",
+  "contents" : "func <#functionName#>(<#argument#>) -> SignalProducer<<#ResultType#>, <#ErrorType#> {\n\t    return SignalProducer.empty\n\t}\n\t",
+  "identifier" : "46DFF646-31A1-4DD1-801B-E9B2E8755F61",
+  "version" : 2
+}

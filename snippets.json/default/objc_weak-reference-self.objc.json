@@ -1,0 +1,13 @@
+{
+  "scopes" : [
+    "CodeBlock"
+  ],
+  "summary" : "",
+  "userSnippet" : true,
+  "title" : "Declare weak referece to self",
+  "completionPrefix" : "objc_weak-reference-self",
+  "language" : "Xcode.SourceCodeLanguage.Objective-C",
+  "contents" : "__weak typeof(self)weakSelf = self;",
+  "identifier" : "8A9EB31E-E2E7-47D5-BD2F-98E3A5848667",
+  "version" : 2
+}

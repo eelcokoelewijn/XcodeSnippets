@@ -1,0 +1,13 @@
+{
+  "scopes" : [
+    "All"
+  ],
+  "summary" : "",
+  "userSnippet" : true,
+  "title" : "Property",
+  "completionPrefix" : "objc_property",
+  "language" : "Xcode.SourceCodeLanguage.Objective-C",
+  "contents" : "@property (nonatomic, <#type#>, nonnull) <#className#> *<#propertyName#>;\n\t",
+  "identifier" : "1AFCB522-6261-4B9B-9C8A-EAA9359F9B83",
+  "version" : 2
+}

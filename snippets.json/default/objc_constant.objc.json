@@ -1,0 +1,13 @@
+{
+  "scopes" : [
+    "All"
+  ],
+  "summary" : "",
+  "userSnippet" : true,
+  "title" : "Typed constants",
+  "completionPrefix" : "objc_constant",
+  "language" : "Xcode.SourceCodeLanguage.Objective-C",
+  "contents" : "static <#type#> *const <#variable name#> = <#value#>;\n\t",
+  "identifier" : "DFA2D502-FE5E-44F1-919A-AC71605FA41D",
+  "version" : 2
+}

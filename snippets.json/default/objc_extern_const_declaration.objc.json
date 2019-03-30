@@ -1,0 +1,13 @@
+{
+  "scopes" : [
+    "TopLevel"
+  ],
+  "summary" : "Declare an external constant",
+  "userSnippet" : true,
+  "title" : "Extern const declaration",
+  "completionPrefix" : "objc_extern_const_declaration",
+  "language" : "Xcode.SourceCodeLanguage.Objective-C",
+  "contents" : "extern <#type#> * const <#constantName#>;\n\t",
+  "identifier" : "02D0D347-7157-40A9-9A9D-F92CEAE7EE5F",
+  "version" : 2
+}

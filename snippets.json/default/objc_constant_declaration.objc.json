@@ -1,0 +1,13 @@
+{
+  "scopes" : [
+    "ClassImplementation"
+  ],
+  "summary" : "",
+  "userSnippet" : true,
+  "title" : "Constant declaration header",
+  "completionPrefix" : "objc_constant_declaration",
+  "language" : "Xcode.SourceCodeLanguage.Objective-C",
+  "contents" : "UIKIT_EXTERN <#type#> *const <#constant name#>;\n\t",
+  "identifier" : "97D22582-92EB-4B7D-B3AD-A041410DDF89",
+  "version" : 2
+}

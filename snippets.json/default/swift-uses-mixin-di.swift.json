@@ -1,0 +1,13 @@
+{
+  "scopes" : [
+    "TopLevel"
+  ],
+  "summary" : "Uses & Mixin cake pattern DI",
+  "userSnippet" : true,
+  "title" : "Uses & Mixin cake pattern",
+  "completionPrefix" : "swift-uses-mixin-di",
+  "language" : "Xcode.SourceCodeLanguage.Swift",
+  "contents" : "protocol <#protocol-name#> {\n\t}\n\t\n\tprotocol Uses<#protocol-name#> {\n\t    var <#protocol-instance-name#>: <#protocol-name#> { get }\n\t}\n\t\n\tclass Mixin<#protocol-name#>: <#protocol-name#> {\n\t\n\t}\n\t",
+  "identifier" : "374FDA4B-FB60-41AA-A5AF-4C2CFFB54118",
+  "version" : 2
+}

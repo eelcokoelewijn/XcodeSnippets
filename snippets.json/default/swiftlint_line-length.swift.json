@@ -1,0 +1,13 @@
+{
+  "scopes" : [
+    "All"
+  ],
+  "summary" : "Swiftlint to disable next line length warning",
+  "userSnippet" : true,
+  "title" : "Swiftlinter disable line_length",
+  "completionPrefix" : "swiftlint_line-length",
+  "language" : "Xcode.SourceCodeLanguage.Swift",
+  "contents" : "\/\/ swiftlint:disable:next line_length\n\t",
+  "identifier" : "073C0B84-599C-4BE7-A52B-EC20CD30A61B",
+  "version" : 2
+}

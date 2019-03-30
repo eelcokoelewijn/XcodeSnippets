@@ -1,0 +1,13 @@
+{
+  "scopes" : [
+    "All"
+  ],
+  "summary" : "Create module assembly",
+  "userSnippet" : true,
+  "title" : "Module assembly",
+  "completionPrefix" : "swift_module-assembly",
+  "language" : "Xcode.SourceCodeLanguage.Swift",
+  "contents" : "import UIKit\n\timport Swinject\n\t\n\tfinal class <#module_info.name#>Assembly: Assembly {\n\t    func assemble(container: Container) {\n\t        container.register(<#module_info.name#>ViewController.self) { (res: Resolver, nav: UINavigationController) in\n\t            let router = res.resolve(<#module_info.name#>Router.self, argument: nav)!\n\t            let presenter = res.resolve(<#module_info.name#>Presenter.self, argument: router)!\n\t            return <#module_info.name#>ViewController(presenter: presenter)\n\t        }\n\t        \n\t        container.register(<#module_info.name#>Presenter.self) { (_: Resolver, router: <#module_info.name#>Router) in\n\t            return <#module_info.name#>PresenterImplementation(router: router)\n\t        }\n\t        \n\t        container.register(<#module_info.name#>Router.self) { (res: Resolver, nav: UINavigationController) in\n\t            return <#module_info.name#>RouterImplementation(navigationController: nav, resolver: res)\n\t        }\n\t    }\n\t}\n\t",
+  "identifier" : "21A26D10-2BEE-49F5-A2D5-4225690A7EC2",
+  "version" : 2
+}

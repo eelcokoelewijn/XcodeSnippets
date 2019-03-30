@@ -1,0 +1,13 @@
+{
+  "scopes" : [
+    "ClassImplementation"
+  ],
+  "summary" : "",
+  "userSnippet" : true,
+  "title" : "create entity without context",
+  "completionPrefix" : "objc_create-entity-no-context",
+  "language" : "Xcode.SourceCodeLanguage.Objective-C",
+  "contents" : "+ (<#class#> *)create<#class#> {\n\t    NSManagedObjectContext *context = [CoreDataStack sharedInstance].mainContext;\n\t    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:[<#class#> entityName] inManagedObjectContext:context];\n\t    <#class#> *<#entityName#> = [[<#class#> alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:nil];\n\t\n\t    return <#entityName#>;\n\t}\n\t",
+  "identifier" : "C1569587-C69E-494C-ADD2-AFEDE84C07E7",
+  "version" : 2
+}

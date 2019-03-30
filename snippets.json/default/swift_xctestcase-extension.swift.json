@@ -1,0 +1,13 @@
+{
+  "scopes" : [
+    "TopLevel"
+  ],
+  "summary" : "Expecting, wait and delay",
+  "userSnippet" : true,
+  "title" : "XCTestCase extensions",
+  "completionPrefix" : "swift_xctestcase-extension",
+  "language" : "Xcode.SourceCodeLanguage.Swift",
+  "contents" : "import Foundation\n\timport XCTest\n\t\n\textension XCTestCase {\n\t    func expecting(description: String = \"\\(#function)\") -> XCTestExpectation {\n\t        return expectation(description: description)\n\t    }\n\t\n\t    func wait(_ timeout: TimeInterval = 0.1) {\n\t        self.waitForExpectations(timeout: timeout, handler: nil)\n\t    }\n\t\n\t    func delay(_ delay: Double = 1.0, executeAfter: @escaping () -> Void) {\n\t        DispatchQueue.main.asyncAfter(deadline: .now() + delay) {\n\t            executeAfter()\n\t        }\n\t    }\n\t}\n\t",
+  "identifier" : "99C41385-73AF-4611-B1F6-60672AA8DA72",
+  "version" : 2
+}

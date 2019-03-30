@@ -1,0 +1,13 @@
+{
+  "scopes" : [
+    "ClassImplementation"
+  ],
+  "summary" : "Codable encode to encoder function",
+  "userSnippet" : true,
+  "title" : "Codable encoder func",
+  "completionPrefix" : "swift_codable-encode-function",
+  "language" : "Xcode.SourceCodeLanguage.Swift",
+  "contents" : "func encode(to encoder: Encoder) throws {\n\t    var container = encoder.container(keyedBy: <#CodingKeys#>.self)\n\t    try container.encode(<#varName#>, forKey: .<#codingKeyCase#>)\n\t    var <#varNestedContainer#> = container.nestedContainer(keyedBy: <#NestedCodingKeys#>.self, forKey: .<#nestedCodingKeyCase#>)\n\t    try <#varNestedContainer#>.encode(<#varName#>, forKey: .<#codingKeyCase#>)\n\t}\n\t",
+  "identifier" : "8F17CB00-C0D6-4004-8D3A-7E4D950A9A92",
+  "version" : 2
+}

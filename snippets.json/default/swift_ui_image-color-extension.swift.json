@@ -1,0 +1,13 @@
+{
+  "scopes" : [
+    "All"
+  ],
+  "summary" : "Creates image from color with given size",
+  "userSnippet" : true,
+  "title" : "UIImage extension image with size and color",
+  "completionPrefix" : "swift_ui_image-color-extension",
+  "language" : "Xcode.SourceCodeLanguage.Swift",
+  "contents" : "import UIKit\n\t\n\tpublic extension UIImage\n\t{\n\t    public convenience init?(color: UIColor, size: CGSize = CGSize(width: 1, height: 1))\n\t    {\n\t        let rect = CGRect(origin: .zero, size: size)\n\t        UIGraphicsBeginImageContextWithOptions(rect.size, false, 0.0)\n\t        color.setFill()\n\t        UIRectFill(rect)\n\t        let image = UIGraphicsGetImageFromCurrentImageContext()\n\t        UIGraphicsEndImageContext()\n\t        \n\t        guard let cgImage = image?.cgImage else { return nil }\n\t        self.init(cgImage: cgImage)\n\t    }\n\t}\n\t",
+  "identifier" : "33E1B24B-889F-454E-B7E8-5E6E380F3000",
+  "version" : 2
+}

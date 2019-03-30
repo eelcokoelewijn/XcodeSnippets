@@ -1,0 +1,13 @@
+{
+  "scopes" : [
+    "ClassImplementation"
+  ],
+  "summary" : "Setup auto layout helper views",
+  "userSnippet" : true,
+  "title" : "Autolayout helpers",
+  "completionPrefix" : "objc_al_setup-auto-layout",
+  "language" : "Xcode.SourceCodeLanguage.Objective-C",
+  "contents" : "#pragma mark - setup views\n\t\n\t- (void)setupViews {\n\t    [self.view addSubview:<#childView#>];\n\t}\n\t\n\t#pragma mark - layout constraints\n\t\n\t- (void)setupViewConstraints {\n\t    NSMutableArray* constraints = [NSMutableArray new];\n\t    [constraints addObject:[NSLayoutConstraint constraintWithItem:<#(nonnull UIView *)#>\n\t                                                        attribute:<#NSLayoutAttribute#>\n\t                                                        relatedBy:<#NSLayoutRelation#>\n\t                                                           toItem:<#(nullable UIView *)#>\n\t                                                        attribute:<#NSLayoutAttribute#>\n\t                                                       multiplier:1\n\t                                                         constant:0]];\n\t    [NSLayoutConstraint activateConstraints:constraints];\n\t}\n\t",
+  "identifier" : "D8F9924D-2B17-43F0-AF62-680013CA5FFC",
+  "version" : 2
+}

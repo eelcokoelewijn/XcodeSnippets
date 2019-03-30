@@ -1,0 +1,13 @@
+{
+  "scopes" : [
+    "ClassImplementation"
+  ],
+  "summary" : "Set object property function",
+  "userSnippet" : true,
+  "title" : "Set object property",
+  "completionPrefix" : "swift_set-function",
+  "language" : "Xcode.SourceCodeLanguage.Swift",
+  "contents" : "func set<#elementProperty#>(_ <#propertyValue#>: <#propertyType#>) {\n    \n}",
+  "identifier" : "F0A28C91-5B1D-4C74-88A2-3896B683B1B9",
+  "version" : 2
+}

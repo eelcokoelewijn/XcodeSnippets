@@ -1,0 +1,13 @@
+{
+  "scopes" : [
+    "TopLevel"
+  ],
+  "summary" : "Protocol for delegate declaration",
+  "userSnippet" : true,
+  "title" : "Delegate declaration",
+  "completionPrefix" : "swift_delegate-protocol",
+  "language" : "Xcode.SourceCodeLanguage.Swift",
+  "contents" : "protocol <#objectToDelegateFrom#>Delegate: class {\n    func <#objectToDelegateFrom+actionName#>(_ <#objectToDelegateFromName#>: <#objectToDelegateFromType#>)\n}",
+  "identifier" : "D03A9921-2764-4FDE-83BC-147FA4ADC0A4",
+  "version" : 2
+}
