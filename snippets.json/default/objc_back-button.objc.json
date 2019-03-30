@@ -1,0 +1,13 @@
+{
+  "scopes" : [
+    "CodeBlock"
+  ],
+  "summary" : "",
+  "userSnippet" : true,
+  "title" : "Set back button title",
+  "completionPrefix" : "objc_back-button",
+  "language" : "Xcode.SourceCodeLanguage.Objective-C",
+  "contents" : "UIBarButtonItem *btnBack = [[UIBarButtonItem alloc]\n\t                            initWithTitle:NSLocalizedString(@\"NavigationBack\", nil)\n\t                            style:UIBarButtonItemStyleBordered\n\t                            target:self\n\t                            action:nil];\n\tself.navigationItem.backBarButtonItem = btnBack;\n\t",
+  "identifier" : "D744E8CC-47E6-475A-A7B4-53AF9F687990",
+  "version" : 2
+}

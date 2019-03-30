@@ -1,0 +1,13 @@
+{
+  "scopes" : [
+    "ClassImplementation"
+  ],
+  "summary" : "Add custom coding-keys for properties",
+  "userSnippet" : true,
+  "title" : "Codeable coding-keys",
+  "completionPrefix" : "swift_codable-coding-keys",
+  "language" : "Xcode.SourceCodeLanguage.Swift",
+  "contents" : "private enum CodingKeys: String, CodingKey {\n\t    case <#var-name#> = \"<#json-key#>\"\n\t}\n\t",
+  "identifier" : "E342F8E8-E95B-402B-AD0C-A246831C7386",
+  "version" : 2
+}

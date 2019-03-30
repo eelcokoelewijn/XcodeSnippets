@@ -1,0 +1,13 @@
+{
+  "scopes" : [
+    "ClassImplementation"
+  ],
+  "summary" : "",
+  "userSnippet" : true,
+  "title" : "get or create entity with server id",
+  "completionPrefix" : "objc_get-or-create-entity",
+  "language" : "Xcode.SourceCodeLanguage.Objective-C",
+  "contents" : "+ (<#class#> *)getOrCreate<#class#>WithServerId:(NSInteger)serverId inManagedContext:(NSManagedObjectContext *)context {\n\t    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:[<#class#> entityName]];\n\t    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@\"<#idParamName#> = %d\", serverId]];\n\t    [fetchRequest setFetchLimit:1];\n\t\n\t    NSError *error = nil;\n\t    NSArray *results = [context executeFetchRequest:fetchRequest error:&error];\n\t\n\t    if (error) {\n\t        NSLog(@\"ERROR: %@ %@\", [error localizedDescription], [error userInfo]);\n\t        return nil;\n\t    }\n\t\n\t    <#class#> *<#entityName#>;\n\t    if (results.count == 0)\n\t    {\n\t        <#entityName#> = [<#class#> insertInManagedObjectContext:context];\n\t        <#entityName#>.<#idParamName#> = [NSNumber numberWithInteger:serverId];\n\t    }\n\t    else\n\t    {\n\t        <#entityName#> = [results lastObject];\n\t    }\n\t\n\t    return <#entityName#>;\n\t}\n\t",
+  "identifier" : "3B358C8E-1D30-4C92-8AD6-1E1DE74E435B",
+  "version" : 2
+}

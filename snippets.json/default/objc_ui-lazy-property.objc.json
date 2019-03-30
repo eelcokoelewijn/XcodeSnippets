@@ -1,0 +1,13 @@
+{
+  "scopes" : [
+    "ClassImplementation"
+  ],
+  "summary" : "",
+  "userSnippet" : true,
+  "title" : "Create lazy instantiation of ui element",
+  "completionPrefix" : "objc_ui-lazy-property",
+  "language" : "Xcode.SourceCodeLanguage.Objective-C",
+  "contents" : "- (<#classname#> * _Nonnull)<#uiElementName#> {\n\t    if (!_<#uiElementName#>) {\n\t        _<#uiElementName#> = [[<#className#> alloc] initWithFrame:CGRectZero];\n\t        _<#uiElementName#>.translatesAutoresizingMaskIntoConstraints = NO;\n\t    }\n\t    return _<#uiElementName#>;\n\t}\n\t",
+  "identifier" : "7B6609F1-FAC6-4E9E-88DB-EA1DB5F33882",
+  "version" : 2
+}

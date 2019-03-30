@@ -1,0 +1,13 @@
+{
+  "scopes" : [
+    "ClassImplementation"
+  ],
+  "summary" : "",
+  "userSnippet" : true,
+  "title" : "Lazy instantiation",
+  "completionPrefix" : "objc_lazy-instantiation",
+  "language" : "Xcode.SourceCodeLanguage.Objective-C",
+  "contents" : "- (<#classname#> * _Nonnull)<#propertyName#> {\n\t    if (!_<#propertyName#>) {\n\t        _<#propertyName#> = [[<#className#> alloc] init];\n\t    }\n\t    return _<#propertyName#>;\n\t}\n\t",
+  "identifier" : "1EBC291C-D317-46B3-9DCE-BD9B160A3E6B",
+  "version" : 2
+}

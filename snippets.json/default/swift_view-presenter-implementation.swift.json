@@ -1,0 +1,13 @@
+{
+  "scopes" : [
+    "TopLevel"
+  ],
+  "summary" : "View Presenter template with setView and start method",
+  "userSnippet" : true,
+  "title" : "View Presenter template",
+  "completionPrefix" : "swift_view-presenter-implementation",
+  "language" : "Xcode.SourceCodeLanguage.Swift",
+  "contents" : "protocol <#ViewName#>View: class {\n\t}\n\t\n\tprotocol <#PresenterName#>Presenter {\n\t    func setView(_ view: <#ViewName#>View)\n\t    func start()\n\t}\n\t\n\tfinal class <#PresenterName#>Implementation: <#PresenterName#> {\n\t    weak var output: <#ViewName#>View!\n\t\n\t    func setView(_ view: <#ViewName#>View) {\n\t        self.output = output\n\t    }\n\t\n\t    func start() {\n\t\n\t    }\n\t}\n\t",
+  "identifier" : "7492C6C2-FD2A-4895-B51F-524CCD9339EE",
+  "version" : 2
+}

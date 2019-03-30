@@ -1,0 +1,13 @@
+{
+  "scopes" : [
+    "CodeBlock"
+  ],
+  "summary" : "Add child viewcontroller to parent view controller view",
+  "userSnippet" : true,
+  "title" : "View controller containment",
+  "completionPrefix" : "swift_viewcontroller-containment",
+  "language" : "Xcode.SourceCodeLanguage.Swift",
+  "contents" : "let vc = <#viewcontroller#>\n\taddChildViewController(vc)\n\t<#parent-viewcontroller#>.view.addSubview(vc.view)\n\t<#viewcontroller#>.didMove(toParentViewController: <#parent-viewcontroller#>)\n\t",
+  "identifier" : "189F1A78-CB78-4606-96DF-9E08A7A49066",
+  "version" : 2
+}

@@ -1,0 +1,13 @@
+{
+  "scopes" : [
+    "All"
+  ],
+  "summary" : "Swiftlint disable next type_name",
+  "userSnippet" : true,
+  "title" : "Swiftlinter disable type_name",
+  "completionPrefix" : "swiftlint_type-name",
+  "language" : "Xcode.SourceCodeLanguage.Swift",
+  "contents" : "\/\/ swiftlint:disable:next type_name\n\t",
+  "identifier" : "22226CDA-DC66-4CE7-873D-E1FFD77C27A2",
+  "version" : 2
+}

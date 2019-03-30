@@ -1,0 +1,13 @@
+{
+  "scopes" : [
+    "ClassImplementation"
+  ],
+  "summary" : "Singleton",
+  "userSnippet" : true,
+  "title" : "sharedInstance",
+  "completionPrefix" : "objc_singleton",
+  "language" : "Xcode.SourceCodeLanguage.Objective-C",
+  "contents" : "+ (<#class name#> *)sharedInstance {\n\t    static dispatch_once_t pred;\n\t    static <#class name#> *sharedInstance = nil;\n\t\n\t    dispatch_once(&pred, ^{\n\t        sharedInstance = [[self alloc] init];\n\t    });\n\t    return sharedInstance;\n\t}\n\t",
+  "identifier" : "4BA2E01D-761F-4269-97A8-14D3A652AEBA",
+  "version" : 2
+}

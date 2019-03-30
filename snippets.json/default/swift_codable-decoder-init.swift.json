@@ -1,0 +1,13 @@
+{
+  "scopes" : [
+    "ClassImplementation"
+  ],
+  "summary" : "Codable decoder from initializer",
+  "userSnippet" : true,
+  "title" : "Codable init from decoder",
+  "completionPrefix" : "swift_codable-decoder-init",
+  "language" : "Xcode.SourceCodeLanguage.Swift",
+  "contents" : "init(from decoder: Decoder) throws {\n\t    let values = try decoder.container(keyedBy: <#CodingKeys#>.self)\n\t    <#var-name#> = try values.decode(<#VarType#>.self, forKey: .<#codingKeyCase#>)\n\t    \n\t    let <#var-name#>Nested = try values.nestedContainer(keyedBy: <#NestedCodingKeys#>.self, forKey: .<#nestedCodingKeyCase#>)\n\t    let <#var-name#> = try <#var-name#>Nested.decode(<#VarType#>.self, forKey: .<#nestedCodingKeyCase#>)\n\t}\n\t",
+  "identifier" : "07FC84C7-43A0-478B-9780-202410C329B2",
+  "version" : 2
+}
