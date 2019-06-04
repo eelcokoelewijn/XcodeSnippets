@@ -1,0 +1,13 @@
+{
+  "scopes" : [
+    "TopLevel"
+  ],
+  "summary" : "Controller for view-controller ",
+  "userSnippet" : true,
+  "title" : "Simple controller",
+  "completionPrefix" : "swift_controller",
+  "language" : "Xcode.SourceCodeLanguage.Generic",
+  "contents" : "protocol <#viewControllerName#>Controllable: class {\n}\n\nfinal class <#controllerName#>Controller {\n    var shouldHideBottomBar: Bool = false\n    weak var viewController: <#viewControllerName#>Controllable?\n\n    func setViewController(_ viewController: <#viewControllerName#>Controllable) {\n        self.viewController = viewController\n    }\n\n    func start() {\n    }\n}",
+  "identifier" : "7850AF58-DA9A-49F2-8C55-A4D45AF58E67",
+  "version" : 2
+}

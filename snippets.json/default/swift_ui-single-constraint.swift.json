@@ -7,7 +7,7 @@
   "title" : "UI single constraint maker",
   "completionPrefix" : "swift_ui-single-constraint",
   "language" : "Xcode.SourceCodeLanguage.Swift",
-  "contents" : "NSLayoutConstraint.activate([<#childView#>.<#anchor#>.constraint(equalTo: <#parentView#>.<#anchor#>)])",
+  "contents" : "NSLayoutConstraint.activate([\n    <#childView#>.<#anchor#>.constraint(equalTo: <#parentView#>.<#anchor#>)\n    ])",
   "identifier" : "92815F70-6C9F-41C0-969D-2FD575D02C4C",
   "version" : 2
 }

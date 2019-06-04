@@ -7,7 +7,7 @@
   "title" : "Single Layout constraint",
   "completionPrefix" : "objc_al_constraint",
   "language" : "Xcode.SourceCodeLanguage.Objective-C",
-  "contents" : "[<#view#> addConstraint:[NSLayoutConstraint constraintWithItem:<#view1#> attribute:<#layoutAttribute#> relatedBy:NSLayoutRelationEqual toItem:<#view2#> attribute:<#layoutAttribute#> multiplier:1.0 constant:0]];\n\t",
+  "contents" : "[<#view1#> addConstraint:[NSLayoutConstraint constraintWithItem:<#view1#> attribute:<#layoutAttribute#> relatedBy:NSLayoutRelationEqual toItem:<#view2#> attribute:<#layoutAttribute#> multiplier:1.0 constant:0]];\n\t",
   "identifier" : "9A451273-B8BB-46C2-BDAA-ED6CAC1F6086",
   "version" : 2
 }
