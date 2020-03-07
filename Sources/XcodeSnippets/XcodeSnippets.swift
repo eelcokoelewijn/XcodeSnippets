@@ -201,7 +201,7 @@ public class XcodeSnippets {
         operationQueue.name = "nl.eko.xcodesnippets-parse"
     }
 
-    public func export(toPath path: String = "default", completion: @escaping (_ success: Bool) -> Void) {
+    public func export(toPath path: String = "default", completion: @escaping (_ success: Bool) throws -> Void) {
         let fs = FileKit()
         //  xCodeDir = Dir.home + "/Library/Developer/Xcode/"
         //  xCodeSnippetsPath = ["UserData","CodeSnippets"]
@@ -210,7 +210,7 @@ public class XcodeSnippets {
         pathToCodeSnippets.appendPathComponent("Developer/Xcode/UserData/CodeSnippets", isDirectory: true)
         let f = Folder(location: pathToCodeSnippets)
         guard let folder = try? fs.load(folder: f) else {
-            completion(false)
+            try? completion(false)
             return
         }
         print("Read \(folder.files.count - 1) snippets from \(pathToCodeSnippets.absoluteString)")
@@ -222,7 +222,7 @@ public class XcodeSnippets {
             try _ = fs.create(folder: destinationFolder)
         } catch let error {
             print(error.localizedDescription)
-            completion(false)
+            try? completion(false)
             return
         }
         let plistParser = SnippetPlistParser()
@@ -236,10 +236,10 @@ public class XcodeSnippets {
             operations.append(operation)
         }
         self.operationQueue.addOperations(operations, waitUntilFinished: true)
-        completion(true)
+        try? completion(true)
     }
 
-    public func `import`(toPath path: String = "default", completion: @escaping (_ success: Bool) -> Void) {
+    public func `import`(toPath path: String = "default", completion: @escaping (_ success: Bool) throws -> Void) {
         let fs = FileKit()
         //  xCodeDir = Dir.home + "/Library/Developer/Xcode/"
         //  xCodeSnippetsPath = ["UserData","CodeSnippets"]
@@ -248,7 +248,7 @@ public class XcodeSnippets {
         pathToCodeSnippets.appendPathComponent(path, isDirectory: true)
         let f = Folder(location: pathToCodeSnippets)
         guard let folder = try? fs.load(folder: f) else {
-            completion(false)
+            try? completion(false)
             return
         }
         print("Read \(folder.files.count - 1) snippets from \(pathToCodeSnippets.absoluteString)")
@@ -267,7 +267,7 @@ public class XcodeSnippets {
             operations.append(operation)
         }
         self.operationQueue.addOperations(operations, waitUntilFinished: true)
-        completion(true)
+        try? completion(true)
     }
 
 }
