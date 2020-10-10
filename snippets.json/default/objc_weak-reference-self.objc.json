@@ -7,7 +7,7 @@
   "title" : "Declare weak referece to self",
   "completionPrefix" : "objc_weak-reference-self",
   "language" : "Xcode.SourceCodeLanguage.Objective-C",
-  "contents" : "__weak typeof(self)weakSelf = self;",
+  "contents" : "typeof(self) __weak weakSelf = self;\nvoid (^someBlock)(void) = ^{\n    typeof(weakSelf) strongSelf = weakSelf;  \/\/ strong by default\n    if (strongSelf) {\n        \/\/ In here, we know strongSelf is not nil and it's a strong reference, so it won't become nil in the middle.\n    }\n};",
   "identifier" : "8A9EB31E-E2E7-47D5-BD2F-98E3A5848667",
   "version" : 2
 }
