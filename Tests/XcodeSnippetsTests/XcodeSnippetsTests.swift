@@ -47,3 +47,31 @@ final class XcodeSnippetsTests: XCTestCase {
     private var _jsonString: String!
     private var _jsonFile: File!
 }
+//
+//<?xml version="1.0" encoding="UTF-8"?>
+//<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+//<plist version="1.0">
+//<dict>
+//    <key>IDECodeSnippetCompletionPrefix</key>
+//    <string>cnstrnt</string>
+//    <key>IDECodeSnippetCompletionScopes</key>
+//    <array>
+//        <string>CodeBlock</string>
+//    </array>
+//    <key>IDECodeSnippetContents</key>
+//    <string>[&lt;#view#&gt; addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:&lt;#visualformat#&gt; options:0 metrics:&lt;#metrics#&gt; views:&lt;#views#&gt;]];
+//    </string>
+//    <key>IDECodeSnippetIdentifier</key>
+//    <string>3B6DD540-B447-48DB-9CDE-BD2640EADDF8</string>
+//    <key>IDECodeSnippetLanguage</key>
+//    <string>Xcode.SourceCodeLanguage.Objective-C</string>
+//    <key>IDECodeSnippetSummary</key>
+//    <string>Create layout constraint using visual format</string>
+//    <key>IDECodeSnippetTitle</key>
+//    <string>Create NSLayoutConstraint visual format</string>
+//    <key>IDECodeSnippetUserSnippet</key>
+//    <true/>
+//    <key>IDECodeSnippetVersion</key>
+//    <integer>2</integer>
+//</dict>
+//</plist>

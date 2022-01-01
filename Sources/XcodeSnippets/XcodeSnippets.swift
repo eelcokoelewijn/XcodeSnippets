@@ -202,24 +202,22 @@ public class XcodeSnippets {
     }
 
     public func export(toPath path: String = "default", completion: @escaping (_ success: Bool) throws -> Void) {
-        let fs = FileKit()
-        //  xCodeDir = Dir.home + "/Library/Developer/Xcode/"
-        //  xCodeSnippetsPath = ["UserData","CodeSnippets"]
+        let fk = FileKit()
         var operations: [BlockOperation] = []
-        var pathToCodeSnippets = FileKit.pathToFolder(forSearchPath: .libraryDirectory)
-        pathToCodeSnippets.appendPathComponent("Developer/Xcode/UserData/CodeSnippets", isDirectory: true)
+        let pathToCodeSnippets = FileKit.pathToFolder(forSearchPath: .libraryDirectory)
+            .appendingPathComponent("Developer/Xcode/UserData/CodeSnippets", isDirectory: true)
         let f = Folder(location: pathToCodeSnippets)
-        guard let folder = try? fs.load(folder: f) else {
+        guard let folder = try? fk.load(folder: f) else {
             try? completion(false)
             return
         }
         print("Read \(folder.files.count - 1) snippets from \(pathToCodeSnippets.absoluteString)")
-        var destination = URL(fileURLWithPath: "snippets.json", isDirectory: true)
-        destination.appendPathComponent(path, isDirectory: true)
+        let destination = URL(fileURLWithPath: "snippets.json", isDirectory: true)
+            .appendingPathComponent(path, isDirectory: true)
         let destinationFolder = Folder(location: destination)
         do {
             print("Create folder \(destinationFolder.location.absoluteString)")
-            try _ = fs.create(folder: destinationFolder)
+            try _ = fk.create(folder: destinationFolder)
         } catch let error {
             print(error.localizedDescription)
             try? completion(false)
@@ -240,22 +238,29 @@ public class XcodeSnippets {
     }
 
     public func `import`(toPath path: String = "default", completion: @escaping (_ success: Bool) throws -> Void) {
-        let fs = FileKit()
-        //  xCodeDir = Dir.home + "/Library/Developer/Xcode/"
-        //  xCodeSnippetsPath = ["UserData","CodeSnippets"]
+        let fk = FileKit()
         var operations: [BlockOperation] = []
-        var pathToCodeSnippets = URL(fileURLWithPath: "snippets.json", isDirectory: true)
-        pathToCodeSnippets.appendPathComponent(path, isDirectory: true)
+        let pathToCodeSnippets = URL(fileURLWithPath: "snippets.json", isDirectory: true)
+            .appendingPathComponent(path, isDirectory: true)
         let f = Folder(location: pathToCodeSnippets)
-        guard let folder = try? fs.load(folder: f) else {
+        guard let folder = try? fk.load(folder: f) else {
             try? completion(false)
             return
         }
         print("Read \(folder.files.count - 1) snippets from \(pathToCodeSnippets.absoluteString)")
-        var destination = FileKit.pathToFolder(forSearchPath: .libraryDirectory)
-        destination.appendPathComponent("Developer/Xcode/UserData/CodeSnippets", isDirectory: true)
+        let destination = FileKit.pathToFolder(forSearchPath: .libraryDirectory)
+            .appendingPathComponent("Developer/Xcode/UserData/CodeSnippets", isDirectory: true)
         let destinationFolder = Folder(location: destination)
-
+        
+        do {
+            print("Create folder \(destinationFolder.location.absoluteString)")
+            try _ = fk.create(folder: destinationFolder)
+        } catch let error {
+            print(error.localizedDescription)
+            try? completion(false)
+            return
+        }
+        
         let jsonParser = SnippetJsonParser()
         let plistWriter = SnippetPlistWriter()
         folder.files.forEach { file in

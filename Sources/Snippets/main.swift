@@ -17,8 +17,7 @@ struct Snippets: ParsableCommand {
 
 extension Snippets {
     struct Import: ParsableCommand {
-        static var configuration
-            = CommandConfiguration(abstract: "Importing code snippets to Xcode.")
+        static var configuration = CommandConfiguration(abstract: "Importing code snippets to Xcode.")
         @OptionGroup()
         var options: Snippets.Options
 
@@ -31,8 +30,7 @@ extension Snippets {
     }
 
     struct Export: ParsableCommand {
-        static var configuration
-            = CommandConfiguration(abstract: "Export code snippets from Xcode.")
+        static var configuration = CommandConfiguration(abstract: "Export code snippets from Xcode.")
         @OptionGroup()
         var options: Snippets.Options
 
@@ -46,7 +44,7 @@ extension Snippets {
 
     struct Options: ParsableArguments {
         @Argument(help: "Subfolder to use for snippets")
-        var path: String
+        var path: String = "default"
     }
 }
 
