@@ -7,7 +7,7 @@
   "title" : "Swift lazy UI-button var",
   "completionPrefix" : "swift_ui-lazy-button-var",
   "language" : "Xcode.SourceCodeLanguage.Swift",
-  "contents" : "private let actionButton: UIButton = {\n        let view = UIButton(type: UIButtonType.roundedRect)\n        view.translatesAutoresizingMaskIntoConstraints = false\n        view.setTitleColor(.blue, for: .normal)\n        view.setTitleColor(.gray, for: .highlighted)\n        view.layer.borderColor = UIColor.blue.cgColor\n        return view\n    }()\n    \n    func setviewButtonTarget(_ target: Any?, action: Selector) {\n        actionButton.addTarget(target, action: action, for: .touchUpInside)\n    }\n    \n    func setviewButtonTitle(_ title: String, for controlState: UIControlState) {\n        actionButton.setTitle(title, for: controlState)\n    }\n    ",
+  "contents" : "private let actionButton: UIButton = {\n        let view = UIButton(type: UIButtonType.roundedRect)\n        view.translatesAutoresizingMaskIntoConstraints = false\n        view.setTitleColor(.blue, for: .normal)\n        view.setTitleColor(.gray, for: .highlighted)\n        view.layer.borderColor = UIColor.blue.cgColor\n        view.accessibilityIdentifier = \"<#var-name#>\"\n        return view\n    }()\n    \n    func setviewButtonTarget(_ target: Any?, action: Selector) {\n        actionButton.addTarget(target, action: action, for: .touchUpInside)\n    }\n    \n    func setviewButtonTitle(_ title: String, for controlState: UIControlState) {\n        actionButton.setTitle(title, for: controlState)\n    }\n    ",
   "identifier" : "830C62B7-470F-4C05-9BB5-0DC75C4521A6",
   "version" : 2
 }

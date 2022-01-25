@@ -7,7 +7,7 @@
   "title" : "Lazy var",
   "completionPrefix" : "swift-lazy-var",
   "language" : "Xcode.SourceCodeLanguage.Swift",
-  "contents" : "private lazy var <#var-name#>: <#type#> = {\n\t    let <#var-name#> = <#type#>\n\t    return <#var-name#>\n\t}()\n\t",
+  "contents" : "private lazy var _<#var-name#>: <#type#> = {\n    let <#var-name#> = <#type#>\n    return <#var-name#>\n}()\n\t",
   "identifier" : "97C08846-0FD0-490F-9A33-D9A767F415C9",
   "version" : 2
 }

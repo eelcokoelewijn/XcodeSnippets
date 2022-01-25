@@ -7,7 +7,7 @@
   "title" : "Simple viewcontroller",
   "completionPrefix" : "swift_viewcontroller",
   "language" : "Xcode.SourceCodeLanguage.Generic",
-  "contents" : "final class <#viewControllerName#>ViewController: UIViewController, <#viewControllerName#>Controllable {\n    private let controller: <#viewControllerName#>Controller\n    init(controller: <#viewControllerName#>Controller) {\n        self.controller = controller\n        super.init(nibName: nil, bundle: nil)\n        hidesBottomBarWhenPushed = controller.shouldHideBottomBar\n        controller.setViewController(self)\n    }\n\n    required init?(coder aDecoder: NSCoder) {\n        fatalError(\"init(coder:) has not been implemented\")\n    }\n}",
+  "contents" : "final class <#viewControllerName#>ViewController: UIViewController, <#viewControllerName#>Controllable {\n    init(controller: <#viewControllerName#>Controller) {\n        _controller = controller\n        super.init(nibName: nil, bundle: nil)\n        hidesBottomBarWhenPushed = _controller.shouldHideBottomBar\n        _controller.viewController = self\n    }\n\n    required init?(coder aDecoder: NSCoder) {\n        fatalError(\"init(coder:) has not been implemented\")\n    }\n\n    private let _controller: <#viewControllerName#>Controller\n}",
   "identifier" : "E3A49180-3ED7-46A9-879D-51176B0EF415",
   "version" : 2
 }
