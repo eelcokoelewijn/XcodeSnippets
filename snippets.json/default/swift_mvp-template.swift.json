@@ -7,7 +7,7 @@
   "title" : "MVP template",
   "completionPrefix" : "swift_mvp-template",
   "language" : "Xcode.SourceCodeLanguage.Swift",
-  "contents" : "protocol <#ViewName#>View: class {\n        var presenter: <#PresenterName#>Presenter { get }\n    }\n    \n    protocol <#PresenterName#>Presenter {\n        var view: <#ViewName#>View? { get }\n        func attach(view: <#ViewName#>View)\n        func detach()\n    }\n    \n    class <#PresenterName#>PresenterImplementation: <#PresenterName#>Presenter {\n        weak var view: <#ViewName#>View?\n    \n        func attach(view: <#ViewName#>View) {\n            self.view = view\n        }\n    \n        func detach() {\n            view = nil\n        }\n    }\n    ",
+  "contents" : "protocol <#ViewName#>View: class {\n    var presenter: <#PresenterName#>Presenter { get }\n}\n\nprotocol <#PresenterName#>Presenter {\n    var view: <#ViewName#>View? { get }\n    func attach(view: <#ViewName#>View)\n    func detach()\n}\n\nclass <#PresenterName#>PresenterImplementation: <#PresenterName#>Presenter {\n    weak var view: <#ViewName#>View?\n\n    func attach(view: <#ViewName#>View) {\n        self.view = view\n    }\n\n    func detach() {\n        view = nil\n    }\n}\n    ",
   "identifier" : "007B13BC-B561-490E-8757-D9FA0552E33C",
   "version" : 2
 }

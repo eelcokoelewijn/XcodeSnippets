@@ -7,7 +7,7 @@
   "title" : "Swift lazy UI var",
   "completionPrefix" : "swift_lazy-ui-var",
   "language" : "Xcode.SourceCodeLanguage.Swift",
-  "contents" : "private let _<#var-name#>: <#type#> = {\n    let view = <#type#>\n    view.translatesAutoresizingMaskIntoConstraints = false\n    view.accessibilityIdentifier = \"<#var-name#>\"\n    return view\n}()\n    ",
+  "contents" : "private lazy var _<#var-name#>: <#type#> = {\n    let view = <#type#>\n    view.translatesAutoresizingMaskIntoConstraints = false\n    view.accessibilityIdentifier = \"<#var-name#>\"\n    return view\n}()\n    ",
   "identifier" : "D4BA8605-B1E1-4127-BF6C-C3CA60B433F5",
   "version" : 2
 }

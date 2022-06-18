@@ -7,7 +7,7 @@
   "title" : "Init implementation",
   "completionPrefix" : "objc_init-implementation",
   "language" : "Xcode.SourceCodeLanguage.Objective-C",
-  "contents" : "self = [super init];\n\tif (self) {\n\t    <#statements#>\n\t}\n\treturn self;\n\t",
+  "contents" : "self = [super init];\nif (self) {\n    <#statements#>\n}\nreturn self;\n",
   "identifier" : "4C72F80A-3258-46F1-8111-83EA72B39CF2",
   "version" : 2
 }
