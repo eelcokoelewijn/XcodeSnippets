@@ -1,21 +1,23 @@
 {
-    "version": "0.2.0",
-    "configurations": [
-      {
-        "type": "lldb",
-        "request": "launch",
-        "name": "Debug",
-        "program": "${workspaceFolder}/.build/debug/Run",
-        "args": [],
-        "cwd": "${workspaceFolder}",
-        "preLaunchTask": "swift-build"
-      },
-      {
-        "type": "lldb",
-        "request": "launch",
-        "name": "Debug tests on Linux",
-        "program": "./.build/x86_64-unknown-linux-gnu/debug/XcodeSnippetsPackageTests.xctest",
-        "preLaunchTask": "swift-build-tests"
-      }
-    ]
-  }
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug snippets",
+      "program": ".build/debug/snippets",
+      "args": [],
+      "cwd": "${workspaceFolder:XcodeSnippets}",
+      "preLaunchTask": "swift: Build Debug snippets"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Release snippets",
+      "program": ".build/release/snippets",
+      "args": [],
+      "cwd": "${workspaceFolder:XcodeSnippets}",
+      "preLaunchTask": "swift: Build Release snippets"
+    }
+  ]
+}

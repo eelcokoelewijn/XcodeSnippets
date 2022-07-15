@@ -1,25 +1,32 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "FileKit",
-        "repositoryURL": "https://github.com/eelcokoelewijn/FileKit",
-        "state": {
-          "branch": null,
-          "revision": "d13a510c9aab1191970999e82aa6d9c7025b1c45",
-          "version": "1.1.9"
-        }
-      },
-      {
-        "package": "swift-argument-parser",
-        "repositoryURL": "https://github.com/apple/swift-argument-parser",
-        "state": {
-          "branch": null,
-          "revision": "f3c9084a71ef4376f2fabbdf1d3d90a49f1fabdb",
-          "version": "1.1.2"
-        }
+  "pins" : [
+    {
+      "identity" : "filekit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/eelcokoelewijn/FileKit",
+      "state" : {
+        "revision" : "affcd6e0b8793a30d10a964ec7d4978893aa7564",
+        "version" : "1.2.0"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "swift-argument-parser",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-argument-parser",
+      "state" : {
+        "revision" : "df9ee6676cd5b3bf5b330ec7568a5644f547201b",
+        "version" : "1.1.3"
+      }
+    },
+    {
+      "identity" : "swiftformat",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/nicklockwood/SwiftFormat.git",
+      "state" : {
+        "revision" : "dbe1144494606ecbe13884bb179c71b0b5bee770",
+        "version" : "0.49.12"
+      }
+    }
+  ],
+  "version" : 2
 }

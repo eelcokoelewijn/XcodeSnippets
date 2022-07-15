@@ -1,5 +1,5 @@
-import Foundation
 import FileKit
+import Foundation
 
 protocol Snippet: Codable {
     var completionPrefix: String { get }
@@ -35,17 +35,18 @@ struct JSONSnippet: Snippet {
         case userSnippet
         case version
     }
+
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        completionPrefix = try values.decode(String.self, forKey: .completionPrefix)
-        scopes = try values.decode(Array<String>.self, forKey: .scopes)
-        contents = try values.decode(String.self, forKey: .contents)
-        identifier = try values.decode(String.self, forKey: .identifier)
-        language = try values.decode(String.self, forKey: .language)
-        summary = try values.decode(String.self, forKey: .summary)
-        title = try values.decode(String.self, forKey: .title)
-        userSnippet = try values.decode(Bool.self, forKey: .userSnippet)
-        version = try values.decode(Int.self, forKey: .version)
+        self.completionPrefix = try values.decode(String.self, forKey: .completionPrefix)
+        self.scopes = try values.decode([String].self, forKey: .scopes)
+        self.contents = try values.decode(String.self, forKey: .contents)
+        self.identifier = try values.decode(String.self, forKey: .identifier)
+        self.language = try values.decode(String.self, forKey: .language)
+        self.summary = try values.decode(String.self, forKey: .summary)
+        self.title = try values.decode(String.self, forKey: .title)
+        self.userSnippet = try values.decode(Bool.self, forKey: .userSnippet)
+        self.version = try values.decode(Int.self, forKey: .version)
     }
 
     func encode(to encoder: Encoder) throws {
@@ -117,7 +118,7 @@ protocol SnippetParser {
 class SnippetJsonParser: SnippetParser {
     func parse(file: File) throws -> JSONSnippet {
         guard let data = file.data else {
-            throw(SnippetParserError.error)
+            throw (SnippetParserError.error)
         }
         do {
             let decoder = JSONDecoder()
@@ -133,10 +134,10 @@ class SnippetJsonParser: SnippetParser {
 class SnippetPlistParser: SnippetParser {
     func parse(file: File) throws -> PlistSnippet {
         guard file.location.pathExtension == "codesnippet" else {
-            throw(SnippetParserError.noCodeSnippet)
+            throw (SnippetParserError.noCodeSnippet)
         }
         guard let data = file.data else {
-            throw(SnippetParserError.error)
+            throw (SnippetParserError.error)
         }
         do {
             let decoder = PropertyListDecoder()
@@ -163,13 +164,13 @@ class SnippetJsonWriter: SnippetWriter {
         let encoder = JSONEncoder()
         encoder.outputFormatting = .prettyPrinted
         guard let data = try? encoder.encode(snippet) else {
-            throw(SnippetWriterError.error)
+            throw (SnippetWriterError.error)
         }
         do {
             let jsonFile = File(name: file.name, folder: file.folder, data: data)
             _ = try fs.save(file: jsonFile)
         } catch {
-            throw(SnippetWriterError.error)
+            throw (SnippetWriterError.error)
         }
         return true
     }
@@ -181,13 +182,13 @@ class SnippetPlistWriter: SnippetWriter {
         let encoder = PropertyListEncoder()
         encoder.outputFormat = .xml
         guard let data = try? encoder.encode(snippet) else {
-            throw(SnippetWriterError.error)
+            throw (SnippetWriterError.error)
         }
         do {
             let plistFile = File(name: file.name, folder: file.folder, data: data)
             _ = try fs.save(file: plistFile)
         } catch {
-            throw(SnippetWriterError.error)
+            throw (SnippetWriterError.error)
         }
         return true
     }
@@ -197,7 +198,7 @@ public class XcodeSnippets {
     let operationQueue: OperationQueue
 
     public init() {
-        operationQueue = OperationQueue()
+        self.operationQueue = OperationQueue()
         operationQueue.name = "nl.eko.xcodesnippets-parse"
     }
 
@@ -218,7 +219,7 @@ public class XcodeSnippets {
         do {
             print("Create folder \(destinationFolder.location.absoluteString)")
             try _ = fk.create(folder: destinationFolder)
-        } catch let error {
+        } catch {
             print(error.localizedDescription)
             try? completion(false)
             return
@@ -226,14 +227,16 @@ public class XcodeSnippets {
         let plistParser = SnippetPlistParser()
         let jsonWriter = SnippetJsonWriter()
         folder.files.forEach { file in
-            let operation = createOperation(on: file,
-                                            destination: destinationFolder,
-                                            type: .json,
-                                            parser: plistParser,
-                                            writer: jsonWriter)
+            let operation = createOperation(
+                on: file,
+                destination: destinationFolder,
+                type: .json,
+                parser: plistParser,
+                writer: jsonWriter
+            )
             operations.append(operation)
         }
-        self.operationQueue.addOperations(operations, waitUntilFinished: true)
+        operationQueue.addOperations(operations, waitUntilFinished: true)
         try? completion(true)
     }
 
@@ -251,44 +254,49 @@ public class XcodeSnippets {
         let destination = FileKit.pathToFolder(forSearchPath: .libraryDirectory)
             .appendingPathComponent("Developer/Xcode/UserData/CodeSnippets", isDirectory: true)
         let destinationFolder = Folder(location: destination)
-        
+
         do {
             print("Create folder \(destinationFolder.location.absoluteString)")
             try _ = fk.create(folder: destinationFolder)
-        } catch let error {
+        } catch {
             print(error.localizedDescription)
             try? completion(false)
             return
         }
-        
+
         let jsonParser = SnippetJsonParser()
         let plistWriter = SnippetPlistWriter()
         folder.files.forEach { file in
-            let operation = createOperation(on: file,
-                                            destination: destinationFolder,
-                                            type: .plist,
-                                            parser: jsonParser,
-                                            writer: plistWriter)
+            let operation = createOperation(
+                on: file,
+                destination: destinationFolder,
+                type: .plist,
+                parser: jsonParser,
+                writer: plistWriter
+            )
             operations.append(operation)
         }
-        self.operationQueue.addOperations(operations, waitUntilFinished: true)
+        operationQueue.addOperations(operations, waitUntilFinished: true)
         try? completion(true)
     }
-
 }
 
 private extension XcodeSnippets {
-    func createOperation<P: SnippetParser, W: SnippetWriter>(on file: File,
-                                                             destination: Folder,
-                                                             type: SnippetType,
-                                                             parser: P,
-                                                             writer: W) -> BlockOperation where W.T: Snippet {
+    func createOperation<P: SnippetParser, W: SnippetWriter>(
+        on file: File,
+        destination: Folder,
+        type: SnippetType,
+        parser: P,
+        writer: W
+    ) -> BlockOperation where W.T: Snippet {
         let fs = FileKit()
-        let operation = BlockOperation() {
-            guard let loadedFile = try? fs.load(file: file),
+        let operation = BlockOperation {
+            guard
+                let loadedFile = try? fs.load(file: file),
                 let parseResult = try? parser.parse(file: loadedFile),
-                let snippet = parseResult as? W.T else {
-                    return
+                let snippet = parseResult as? W.T
+            else {
+                return
             }
             print("\(snippet.title)")
             let filename = self.createFileName(forSnippet: snippet, snippetType: type)
@@ -303,7 +311,7 @@ private extension XcodeSnippets {
     }
 
     func createFileName(forSnippet snippet: Snippet, snippetType type: SnippetType) -> String {
-        var filename: String = ""
+        var filename = ""
         if type == .plist {
             filename = snippet.identifier
         } else {

@@ -1,5 +1,5 @@
-import Foundation
 import ArgumentParser
+import Foundation
 import XcodeSnippets
 
 // https://useyourloaf.com/blog/using-swift-codable-with-property-lists/
@@ -12,14 +12,14 @@ struct Snippets: ParsableCommand {
         abstract: "Snippets importer/ exporter tool.",
         discussion: "Exports or imports code snippets from/to Xcode-user-data, located in `/Users/[USERNAME]/Library/Developer/Xcode/UserData/CodeSnippets`.",
         subcommands: [Import.self, Export.self],
-        defaultSubcommand: Export.self)
+        defaultSubcommand: Export.self
+    )
 }
 
 extension Snippets {
     struct Import: ParsableCommand {
         static var configuration = CommandConfiguration(abstract: "Importing code snippets to Xcode.")
-        @OptionGroup()
-        var options: Snippets.Options
+        @OptionGroup() var options: Snippets.Options
 
         func run() {
             let xcodeSnippets = XcodeSnippets()
@@ -31,8 +31,7 @@ extension Snippets {
 
     struct Export: ParsableCommand {
         static var configuration = CommandConfiguration(abstract: "Export code snippets from Xcode.")
-        @OptionGroup()
-        var options: Snippets.Options
+        @OptionGroup() var options: Snippets.Options
 
         func run() {
             let xcodeSnippets = XcodeSnippets()
@@ -43,11 +42,8 @@ extension Snippets {
     }
 
     struct Options: ParsableArguments {
-        @Argument(help: "Subfolder to use for snippets")
-        var path: String = "default"
+        @Argument(help: "Subfolder to use for snippets") var path = "default"
     }
 }
 
 Snippets.main()
-
-

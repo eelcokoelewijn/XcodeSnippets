@@ -1,6 +1,6 @@
-import XCTest
-@testable import XcodeSnippets
 @testable import FileKit
+@testable import XcodeSnippets
+import XCTest
 
 final class XcodeSnippetsTests: XCTestCase {
     override func setUp() {
@@ -16,8 +16,9 @@ final class XcodeSnippetsTests: XCTestCase {
         // "contents" : "the snippet contents",
         // "identifier" : "D8F9924D-2B17-43F0-AF62-680013CA5FFC",
         // "version" : 2
-        // }        
-        _jsonString = "{\"scopes\":[\"ClassImplementation\"],\"summary\":\"Setup auto layout helper views\",\"userSnippet\":true,\"title\":\"Autolayout helpers\",\"completionPrefix\":\"objc_al_setup-auto-layout\",\"language\":\"Xcode.SourceCodeLanguage.Objective-C\",\"contents\":\"the snippet contents\",\"identifier\":\"D8F9924D-2B17-43F0-AF62-680013CA5FFC\",\"version\":2}"
+        // }
+        _jsonString =
+            "{\"scopes\":[\"ClassImplementation\"],\"summary\":\"Setup auto layout helper views\",\"userSnippet\":true,\"title\":\"Autolayout helpers\",\"completionPrefix\":\"objc_al_setup-auto-layout\",\"language\":\"Xcode.SourceCodeLanguage.Objective-C\",\"contents\":\"the snippet contents\",\"identifier\":\"D8F9924D-2B17-43F0-AF62-680013CA5FFC\",\"version\":2}"
         let jsonData = _jsonString.data(using: .utf8)
         _jsonFile = FileKit.fileInCachesFolder(withName: "test.json", data: jsonData)
 
@@ -76,7 +77,7 @@ final class XcodeSnippetsTests: XCTestCase {
         </plist>
         """
         let plistData = _plistString.data(using: .utf8)
-        _plistFile = FileKit.fileInCachesFolder(withName: "test.codesnippet", data: plistData)  
+        _plistFile = FileKit.fileInCachesFolder(withName: "test.codesnippet", data: plistData)
     }
 
     func testSnippetJsonParser() {
@@ -124,17 +125,9 @@ final class XcodeSnippetsTests: XCTestCase {
         XCTAssertEqual(snippet.contents, "the snippet content", "'the snippet content' expected, got \(snippet.contents)")
         XCTAssertEqual(snippet.identifier, "3B6DD540-B447-48DB-9CDE-BD2640EADDF8", "'3B6DD540-B447-48DB-9CDE-BD2640EADDF8' expected, got \(snippet.identifier)")
     }
-    
-    static var allTests = [
-        ("testSnippetJsonParser", testSnippetJsonParser),
-        ("testSnippetJson", testSnippetJson),
-        ("testSnippetPlistParser", testSnippetPlistParser),
-        ("testSnippetPlist", testSnippetPlist)
-    ]
 
     private var _jsonString: String!
     private var _jsonFile: File!
     private var _plistString: String!
     private var _plistFile: File!
 }
-

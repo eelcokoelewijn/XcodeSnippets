@@ -1,5 +1,3 @@
 import UIKit
 
-final class ___FILEBASENAMEASIDENTIFIER___: UIView {
-
-}
+final class ___FILEBASENAMEASIDENTIFIER___: UIView {}
