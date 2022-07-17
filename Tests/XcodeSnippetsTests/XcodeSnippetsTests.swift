@@ -20,8 +20,11 @@ final class XcodeSnippetsTests: XCTestCase {
         _jsonString =
             "{\"scopes\":[\"ClassImplementation\"],\"summary\":\"Setup auto layout helper views\",\"userSnippet\":true,\"title\":\"Autolayout helpers\",\"completionPrefix\":\"objc_al_setup-auto-layout\",\"language\":\"Xcode.SourceCodeLanguage.Objective-C\",\"contents\":\"the snippet contents\",\"identifier\":\"D8F9924D-2B17-43F0-AF62-680013CA5FFC\",\"version\":2}"
         let jsonData = _jsonString.data(using: .utf8)
-        _jsonFile = FileKit.fileInCachesFolder(withName: "test.json", data: jsonData)
-
+        do {
+            _jsonFile = try FileKit.fileInCachesFolder(withName: "test.json", data: jsonData)
+        } catch {
+            XCTFail("Could not create json-file in cache-folder.")
+        }
         // <?xml version="1.0" encoding="UTF-8"?>
         // <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
         // <plist version="1.0">
@@ -77,7 +80,11 @@ final class XcodeSnippetsTests: XCTestCase {
         </plist>
         """
         let plistData = _plistString.data(using: .utf8)
-        _plistFile = FileKit.fileInCachesFolder(withName: "test.codesnippet", data: plistData)
+        do {
+            _plistFile = try FileKit.fileInCachesFolder(withName: "test.codesnippet", data: plistData)
+        } catch {
+            XCTFail("Could not create plist-file in cache-folder.")
+        }
     }
 
     func testSnippetJsonParser() {

@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/eelcokoelewijn/FileKit",
       "state" : {
-        "revision" : "affcd6e0b8793a30d10a964ec7d4978893aa7564",
-        "version" : "1.2.0"
+        "revision" : "6b57d07fe3bc316ce4dc938b1da142199e33d8a6",
+        "version" : "1.2.3"
       }
     },
     {
@@ -23,8 +23,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/nicklockwood/SwiftFormat.git",
       "state" : {
-        "revision" : "dbe1144494606ecbe13884bb179c71b0b5bee770",
-        "version" : "0.49.12"
+        "revision" : "665c3c58923ee8ac36d3e44b17dc185229cce301",
+        "version" : "0.49.13"
       }
     }
   ],

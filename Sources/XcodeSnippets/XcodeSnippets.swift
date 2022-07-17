@@ -195,33 +195,29 @@ class SnippetPlistWriter: SnippetWriter {
 }
 
 public class XcodeSnippets {
-    let operationQueue: OperationQueue
-
     public init() {
-        self.operationQueue = OperationQueue()
-        operationQueue.name = "nl.eko.xcodesnippets-parse"
+        self._operationQueue = OperationQueue()
+        _operationQueue.name = "nl.eko.xcodesnippets-parse"
     }
 
-    public func export(toPath path: String = "default", completion: @escaping (_ success: Bool) throws -> Void) {
+    public func export(fromPath: String? = nil, toPath path: String?, completion: @escaping (_ success: Bool) -> Void) {
         let fk = FileKit()
         var operations: [BlockOperation] = []
-        let pathToCodeSnippets = FileKit.pathToFolder(forSearchPath: .libraryDirectory)
-            .appendingPathComponent("Developer/Xcode/UserData/CodeSnippets", isDirectory: true)
-        let f = Folder(location: pathToCodeSnippets)
-        guard let folder = try? fk.load(folder: f) else {
-            try? completion(false)
+        guard
+            let snippetsFolder = try? fromFolder(with: fromPath),
+            let folder = try? fk.load(folder: snippetsFolder)
+        else {
+            completion(false)
             return
         }
-        print("Read \(folder.files.count - 1) snippets from \(pathToCodeSnippets.absoluteString)")
-        let destination = URL(fileURLWithPath: "snippets.json", isDirectory: true)
-            .appendingPathComponent(path, isDirectory: true)
-        let destinationFolder = Folder(location: destination)
+        print("Read \(folder.files.count) snippets from \(snippetsFolder.location.absoluteString)")
+        let destinationFolder = toFolder(with: path)
         do {
             print("Create folder \(destinationFolder.location.absoluteString)")
             try _ = fk.create(folder: destinationFolder)
         } catch {
             print(error.localizedDescription)
-            try? completion(false)
+            completion(false)
             return
         }
         let plistParser = SnippetPlistParser()
@@ -236,31 +232,30 @@ public class XcodeSnippets {
             )
             operations.append(operation)
         }
-        operationQueue.addOperations(operations, waitUntilFinished: true)
-        try? completion(true)
+        _operationQueue.addOperations(operations, waitUntilFinished: true)
+        completion(true)
     }
 
-    public func `import`(toPath path: String = "default", completion: @escaping (_ success: Bool) throws -> Void) {
+    public func `import`(toPath: String? = nil, fromPath path: String?, completion: @escaping (_ success: Bool) -> Void) {
         let fk = FileKit()
         var operations: [BlockOperation] = []
-        let pathToCodeSnippets = URL(fileURLWithPath: "snippets.json", isDirectory: true)
-            .appendingPathComponent(path, isDirectory: true)
-        let f = Folder(location: pathToCodeSnippets)
-        guard let folder = try? fk.load(folder: f) else {
-            try? completion(false)
+
+        let f = toFolder(with: path)
+        guard
+            let folder = try? fk.load(folder: f),
+            let destinationFolder = try? fromFolder(with: toPath)
+        else {
+            completion(false)
             return
         }
-        print("Read \(folder.files.count - 1) snippets from \(pathToCodeSnippets.absoluteString)")
-        let destination = FileKit.pathToFolder(forSearchPath: .libraryDirectory)
-            .appendingPathComponent("Developer/Xcode/UserData/CodeSnippets", isDirectory: true)
-        let destinationFolder = Folder(location: destination)
 
+        print("Read \(folder.files.count) snippets from \(folder.location.absoluteString)")
         do {
             print("Create folder \(destinationFolder.location.absoluteString)")
             try _ = fk.create(folder: destinationFolder)
         } catch {
             print(error.localizedDescription)
-            try? completion(false)
+            completion(false)
             return
         }
 
@@ -276,13 +271,11 @@ public class XcodeSnippets {
             )
             operations.append(operation)
         }
-        operationQueue.addOperations(operations, waitUntilFinished: true)
-        try? completion(true)
+        _operationQueue.addOperations(operations, waitUntilFinished: true)
+        completion(true)
     }
-}
 
-private extension XcodeSnippets {
-    func createOperation<P: SnippetParser, W: SnippetWriter>(
+    private func createOperation<P: SnippetParser, W: SnippetWriter>(
         on file: File,
         destination: Folder,
         type: SnippetType,
@@ -296,6 +289,7 @@ private extension XcodeSnippets {
                 let parseResult = try? parser.parse(file: loadedFile),
                 let snippet = parseResult as? W.T
             else {
+                print("Issue(s): Read, parse convert...")
                 return
             }
             print("\(snippet.title)")
@@ -310,7 +304,7 @@ private extension XcodeSnippets {
         return operation
     }
 
-    func createFileName(forSnippet snippet: Snippet, snippetType type: SnippetType) -> String {
+    private func createFileName(forSnippet snippet: Snippet, snippetType type: SnippetType) -> String {
         var filename = ""
         if type == .plist {
             filename = snippet.identifier
@@ -327,4 +321,23 @@ private extension XcodeSnippets {
         filename.append(".\(type.rawValue)")
         return filename
     }
+
+    private func fromFolder(with path: String?) throws -> Folder {
+        if let path = path {
+            return FileKit.folder(fromPath: path)
+        }
+        var pathToCodeSnippets = try FileKit.pathToFolder(forSearchPath: .libraryDirectory)
+        pathToCodeSnippets.appendPathComponent("Developer/Xcode/UserData/CodeSnippets", isDirectory: true)
+        return Folder(location: pathToCodeSnippets)
+    }
+
+    private func toFolder(with path: String?) -> Folder {
+        if let path = path {
+            return FileKit.folder(fromPath: path)
+        }
+        let pathToCodeSnippets = URL(fileURLWithPath: "snippets.json", isDirectory: true).appendingPathComponent("default", isDirectory: true)
+        return Folder(location: pathToCodeSnippets)
+    }
+
+    private let _operationQueue: OperationQueue
 }

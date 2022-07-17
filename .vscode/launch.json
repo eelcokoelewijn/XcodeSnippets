@@ -1,23 +1,22 @@
 {
-  "version": "0.2.0",
-  "configurations": [
-    {
-      "type": "lldb",
-      "request": "launch",
-      "name": "Debug snippets",
-      "program": ".build/debug/snippets",
-      "args": [],
-      "cwd": "${workspaceFolder:XcodeSnippets}",
-      "preLaunchTask": "swift: Build Debug snippets"
-    },
-    {
-      "type": "lldb",
-      "request": "launch",
-      "name": "Release snippets",
-      "program": ".build/release/snippets",
-      "args": [],
-      "cwd": "${workspaceFolder:XcodeSnippets}",
-      "preLaunchTask": "swift: Build Release snippets"
-    }
-  ]
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug snippets",
+            "program": ".build/debug/snippets",
+            "args": [],
+            "cwd": "${workspaceFolder:XcodeSnippets}",
+            "preLaunchTask": "swift: Build Debug snippets"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Release snippets",
+            "program": ".build/release/snippets",
+            "args": [],
+            "cwd": "${workspaceFolder:XcodeSnippets}",
+            "preLaunchTask": "swift: Build Release snippets"
+        }
+    ]
 }

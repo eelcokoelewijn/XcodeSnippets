@@ -7,10 +7,7 @@ let package = Package(
     name: "XcodeSnippets",
     products: [
         .executable(name: "snippets", targets: ["Snippets"]),
-        .library(
-            name: "XcodeSnippets",
-            targets: ["XcodeSnippets"]
-        )
+        .library(name: "XcodeSnippets", targets: ["XcodeSnippets"])
     ],
     dependencies: [
         .package(url: "https://github.com/eelcokoelewijn/FileKit", .upToNextMajor(from: "1.0.0")),
@@ -18,17 +15,8 @@ let package = Package(
         .package(url: "https://github.com/nicklockwood/SwiftFormat.git", from: "0.35.8")
     ],
     targets: [
-        .executableTarget(
-            name: "Snippets",
-            dependencies: ["XcodeSnippets"]
-        ),
-        .target(
-            name: "XcodeSnippets",
-            dependencies: ["FileKit", .product(name: "ArgumentParser", package: "swift-argument-parser")]
-        ),
-        .testTarget(
-            name: "XcodeSnippetsTests",
-            dependencies: ["XcodeSnippets"]
-        )
+        .executableTarget(name: "Snippets", dependencies: ["XcodeSnippets"]),
+        .target(name: "XcodeSnippets", dependencies: ["FileKit", .product(name: "ArgumentParser", package: "swift-argument-parser")]),
+        .testTarget(name: "XcodeSnippetsTests", dependencies: ["XcodeSnippets"])
     ]
 )
