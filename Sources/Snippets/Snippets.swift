@@ -21,10 +21,8 @@ struct Snippets: AsyncParsableCommand {
         subcommands: [Import.self, Export.self],
         defaultSubcommand: Export.self
     )
-}
 
-extension Snippets {
-    struct Import: AsyncParsableCommand {
+    struct Import: ParsableCommand {
         static var configuration = CommandConfiguration(abstract: "Importing code snippets to Xcode.")
         @OptionGroup() var options: Snippets.Options
 
@@ -34,7 +32,7 @@ extension Snippets {
         }
     }
 
-    struct Export: AsyncParsableCommand {
+    struct Export: ParsableCommand {
         static var configuration = CommandConfiguration(abstract: "Export code snippets from Xcode.")
         @OptionGroup() var options: Snippets.Options
 
@@ -47,5 +45,5 @@ extension Snippets {
     struct Options: ParsableArguments {
         @Argument(help: "Folder to import snippets from") var from: String?
         @Argument(help: "Folder to use for snippets") var to: String?
-    }
+    }    
 }
